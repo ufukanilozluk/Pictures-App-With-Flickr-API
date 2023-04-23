@@ -7,13 +7,28 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class GalleryViewController: UIViewController {
 
+    @IBOutlet weak var galleryCollectionView: UICollectionView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        galleryCollectionView.delegate = self
+            galleryCollectionView.dataSource = self
+    
     }
 
-
 }
+
+//extension GalleryViewController : UICollectionViewDelegate,UICollectionViewDataSource{
+////    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+////         0
+////    }
+////
+////    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+////          return
+////    }
+//
+//
+//}
 

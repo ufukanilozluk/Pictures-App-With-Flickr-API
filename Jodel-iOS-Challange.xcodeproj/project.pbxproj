@@ -16,6 +16,7 @@
 		E13F6EF829F5944F0050050B /* Jodel_iOS_ChallangeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13F6EF729F5944F0050050B /* Jodel_iOS_ChallangeTests.swift */; };
 		E13F6F0229F5944F0050050B /* Jodel_iOS_ChallangeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13F6F0129F5944F0050050B /* Jodel_iOS_ChallangeUITests.swift */; };
 		E13F6F0429F5944F0050050B /* Jodel_iOS_ChallangeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13F6F0329F5944F0050050B /* Jodel_iOS_ChallangeUITestsLaunchTests.swift */; };
+		E13F6F1329F5A9D90050050B /* GalleryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13F6F1229F5A9D90050050B /* GalleryCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		E13F6EFD29F5944F0050050B /* Jodel-iOS-ChallangeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Jodel-iOS-ChallangeUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E13F6F0129F5944F0050050B /* Jodel_iOS_ChallangeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Jodel_iOS_ChallangeUITests.swift; sourceTree = "<group>"; };
 		E13F6F0329F5944F0050050B /* Jodel_iOS_ChallangeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Jodel_iOS_ChallangeUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		E13F6F1229F5A9D90050050B /* GalleryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +105,7 @@
 				E13F6EE229F5944D0050050B /* SceneDelegate.swift */,
 				E13F6EE429F5944D0050050B /* ViewController.swift */,
 				E13F6EE629F5944D0050050B /* Main.storyboard */,
+				E13F6F1229F5A9D90050050B /* GalleryCollectionViewCell.swift */,
 				E13F6EE929F5944F0050050B /* Assets.xcassets */,
 				E13F6EEB29F5944F0050050B /* LaunchScreen.storyboard */,
 				E13F6EEE29F5944F0050050B /* Info.plist */,
@@ -259,6 +262,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E13F6EE529F5944D0050050B /* ViewController.swift in Sources */,
+				E13F6F1329F5A9D90050050B /* GalleryCollectionViewCell.swift in Sources */,
 				E13F6EE129F5944D0050050B /* AppDelegate.swift in Sources */,
 				E13F6EE329F5944D0050050B /* SceneDelegate.swift in Sources */,
 			);
@@ -444,6 +448,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -471,6 +476,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
