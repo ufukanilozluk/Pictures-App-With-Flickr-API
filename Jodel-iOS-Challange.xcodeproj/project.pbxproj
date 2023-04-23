@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		E13F6EE129F5944D0050050B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13F6EE029F5944D0050050B /* AppDelegate.swift */; };
-		E13F6EE329F5944D0050050B /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13F6EE229F5944D0050050B /* SceneDelegate.swift */; };
 		E13F6EE529F5944D0050050B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13F6EE429F5944D0050050B /* ViewController.swift */; };
 		E13F6EE829F5944D0050050B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E13F6EE629F5944D0050050B /* Main.storyboard */; };
 		E13F6EEA29F5944F0050050B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E13F6EE929F5944F0050050B /* Assets.xcassets */; };
@@ -17,6 +16,11 @@
 		E13F6F0229F5944F0050050B /* Jodel_iOS_ChallangeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13F6F0129F5944F0050050B /* Jodel_iOS_ChallangeUITests.swift */; };
 		E13F6F0429F5944F0050050B /* Jodel_iOS_ChallangeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13F6F0329F5944F0050050B /* Jodel_iOS_ChallangeUITestsLaunchTests.swift */; };
 		E13F6F1329F5A9D90050050B /* GalleryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13F6F1229F5A9D90050050B /* GalleryCollectionViewCell.swift */; };
+		E13F6F1629F5CAC20050050B /* PictureModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13F6F1529F5CAC20050050B /* PictureModel.swift */; };
+		E13F6F1A29F5D6300050050B /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13F6F1729F5D62E0050050B /* APIManager.swift */; };
+		E13F6F1B29F5D6300050050B /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13F6F1829F5D62F0050050B /* Box.swift */; };
+		E13F6F1C29F5D6300050050B /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13F6F1929F5D62F0050050B /* EndPoint.swift */; };
+		E13F6F1E29F5D72D0050050B /* PhotosViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13F6F1D29F5D72D0050050B /* PhotosViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +43,6 @@
 /* Begin PBXFileReference section */
 		E13F6EDD29F5944D0050050B /* Jodel-iOS-Challange.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Jodel-iOS-Challange.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E13F6EE029F5944D0050050B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E13F6EE229F5944D0050050B /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		E13F6EE429F5944D0050050B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E13F6EE729F5944D0050050B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E13F6EE929F5944F0050050B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -51,6 +54,11 @@
 		E13F6F0129F5944F0050050B /* Jodel_iOS_ChallangeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Jodel_iOS_ChallangeUITests.swift; sourceTree = "<group>"; };
 		E13F6F0329F5944F0050050B /* Jodel_iOS_ChallangeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Jodel_iOS_ChallangeUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		E13F6F1229F5A9D90050050B /* GalleryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryCollectionViewCell.swift; sourceTree = "<group>"; };
+		E13F6F1529F5CAC20050050B /* PictureModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureModel.swift; sourceTree = "<group>"; };
+		E13F6F1729F5D62E0050050B /* APIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		E13F6F1829F5D62F0050050B /* Box.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Box.swift; sourceTree = "<group>"; };
+		E13F6F1929F5D62F0050050B /* EndPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
+		E13F6F1D29F5D72D0050050B /* PhotosViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,11 +109,14 @@
 		E13F6EDF29F5944D0050050B /* Jodel-iOS-Challange */ = {
 			isa = PBXGroup;
 			children = (
+				E13F6F1429F5CA7E0050050B /* UI */,
 				E13F6EE029F5944D0050050B /* AppDelegate.swift */,
-				E13F6EE229F5944D0050050B /* SceneDelegate.swift */,
-				E13F6EE429F5944D0050050B /* ViewController.swift */,
+				E13F6F1529F5CAC20050050B /* PictureModel.swift */,
+				E13F6F1729F5D62E0050050B /* APIManager.swift */,
+				E13F6F1829F5D62F0050050B /* Box.swift */,
+				E13F6F1929F5D62F0050050B /* EndPoint.swift */,
+				E13F6F1D29F5D72D0050050B /* PhotosViewModel.swift */,
 				E13F6EE629F5944D0050050B /* Main.storyboard */,
-				E13F6F1229F5A9D90050050B /* GalleryCollectionViewCell.swift */,
 				E13F6EE929F5944F0050050B /* Assets.xcassets */,
 				E13F6EEB29F5944F0050050B /* LaunchScreen.storyboard */,
 				E13F6EEE29F5944F0050050B /* Info.plist */,
@@ -128,6 +139,15 @@
 				E13F6F0329F5944F0050050B /* Jodel_iOS_ChallangeUITestsLaunchTests.swift */,
 			);
 			path = "Jodel-iOS-ChallangeUITests";
+			sourceTree = "<group>";
+		};
+		E13F6F1429F5CA7E0050050B /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				E13F6EE429F5944D0050050B /* ViewController.swift */,
+				E13F6F1229F5A9D90050050B /* GalleryCollectionViewCell.swift */,
+			);
+			path = UI;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -261,10 +281,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E13F6F1A29F5D6300050050B /* APIManager.swift in Sources */,
+				E13F6F1E29F5D72D0050050B /* PhotosViewModel.swift in Sources */,
+				E13F6F1B29F5D6300050050B /* Box.swift in Sources */,
+				E13F6F1C29F5D6300050050B /* EndPoint.swift in Sources */,
 				E13F6EE529F5944D0050050B /* ViewController.swift in Sources */,
 				E13F6F1329F5A9D90050050B /* GalleryCollectionViewCell.swift in Sources */,
 				E13F6EE129F5944D0050050B /* AppDelegate.swift in Sources */,
-				E13F6EE329F5944D0050050B /* SceneDelegate.swift in Sources */,
+				E13F6F1629F5CAC20050050B /* PictureModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
