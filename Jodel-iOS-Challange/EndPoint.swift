@@ -41,8 +41,8 @@ extension Endpoint {
             path: "services/rest/",
             queryItems: [
                 URLQueryItem(name: "method", value: method),
-                URLQueryItem(name: "apiKey", value: apiKey),
-                URLQueryItem(name: "galleryId", value: galleryId),
+                URLQueryItem(name: "api_key", value: apiKey),
+                URLQueryItem(name: "gallery_id", value: galleryId),
                 URLQueryItem(name: "format", value: format),
                 URLQueryItem(name: "nojsoncallback", value: noJsonCallBack),
                 URLQueryItem(name: "per_page", value: perPage),

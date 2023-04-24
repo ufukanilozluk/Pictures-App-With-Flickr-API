@@ -5,16 +5,23 @@
 //  Created by Ufuk Anıl Özlük on 23.04.2023.
 //
 
-
-struct Photos : Codable {
-    var page: Int
-    var pages: Int
-    var perpage: Int
-    var total: Int
-    var photo: [Photo]
+struct GalleryData: Codable{
+    var photos : Photos
 }
 
-extension Photos {
+extension GalleryData {
+    struct Photos : Codable {
+        var page: String
+        var pages: Int
+        var total : Int
+        var perpage: String
+        var photo: [Photo]
+    }
+    
+}
+
+
+extension GalleryData.Photos {
     struct Photo : Codable {
         var id: String
         var secret: String
@@ -26,5 +33,3 @@ extension Photos {
         }
     }
 }
-
-

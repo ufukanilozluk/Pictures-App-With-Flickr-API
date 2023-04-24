@@ -10,88 +10,107 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Gallery View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Jodel_iOS_Challange" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="GalleryViewController" customModule="Jodel_iOS_Challange" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="gGr-1V-wwY">
-                                <rect key="frame" x="16" y="75" width="361" height="727"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="rsd-EZ-XII">
-                                    <size key="itemSize" width="128" height="128"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="GalleryCell" id="zPx-IH-8ak" customClass="GalleryCollectionViewCell" customModule="Jodel_iOS_Challange" customModuleProvider="target">
-                                        <rect key="frame" x="44.666666666666664" y="0.0" width="272" height="188.33333333333334"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="BHm-N2-0yt">
-                                            <rect key="frame" x="0.0" y="0.0" width="272" height="188.33333333333334"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="1oj-oX-nXD">
-                                                    <rect key="frame" x="16" y="16" width="240" height="156.33333333333334"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="PjT-OP-axo">
+                                <rect key="frame" x="20" y="75" width="337" height="757"/>
+                                <subviews>
+                                    <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="gGr-1V-wwY">
+                                        <rect key="frame" x="0.0" y="0.0" width="337" height="722.66666666666663"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="rsd-EZ-XII">
+                                            <size key="itemSize" width="128" height="128"/>
+                                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                        </collectionViewFlowLayout>
+                                        <cells>
+                                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="GalleryCell" id="zPx-IH-8ak" customClass="GalleryCollectionViewCell" customModule="Jodel_iOS_Challange" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="BHm-N2-0yt">
+                                                    <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <subviews>
-                                                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2XY-iA-w1b" customClass="ImageSlideshow" customModule="ImageSlideshow">
-                                                            <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="1oj-oX-nXD">
+                                                            <rect key="frame" x="8" y="8" width="112" height="112"/>
+                                                            <subviews>
+                                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2XY-iA-w1b" customClass="ImageSlideshow" customModule="ImageSlideshow">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="112" height="112"/>
+                                                                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                                    <constraints>
+                                                                        <constraint firstAttribute="height" constant="240" id="va1-MG-sbg"/>
+                                                                    </constraints>
+                                                                    <userDefinedRuntimeAttributes>
+                                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                                                    </userDefinedRuntimeAttributes>
+                                                                </view>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8XK-JK-6cm">
+                                                                    <rect key="frame" x="0.0" y="112" width="112" height="0.0"/>
+                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                    <nil key="textColor"/>
+                                                                    <nil key="highlightedColor"/>
+                                                                    <userDefinedRuntimeAttributes>
+                                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                                                    </userDefinedRuntimeAttributes>
+                                                                </label>
+                                                            </subviews>
                                                             <userDefinedRuntimeAttributes>
                                                                 <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
                                                             </userDefinedRuntimeAttributes>
-                                                        </view>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8XK-JK-6cm">
-                                                            <rect key="frame" x="99.333333333333329" y="136" width="41.333333333333329" height="20.333333333333343"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                            <nil key="textColor"/>
-                                                            <nil key="highlightedColor"/>
-                                                            <userDefinedRuntimeAttributes>
-                                                                <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
-                                                            </userDefinedRuntimeAttributes>
-                                                        </label>
+                                                        </stackView>
                                                     </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="1oj-oX-nXD" firstAttribute="top" secondItem="BHm-N2-0yt" secondAttribute="top" constant="8" id="1OG-b1-HYz"/>
+                                                        <constraint firstAttribute="bottom" secondItem="1oj-oX-nXD" secondAttribute="bottom" constant="8" id="BE3-V0-oNo"/>
+                                                        <constraint firstAttribute="trailing" secondItem="1oj-oX-nXD" secondAttribute="trailing" constant="8" id="keQ-sV-ejR"/>
+                                                        <constraint firstItem="1oj-oX-nXD" firstAttribute="leading" secondItem="BHm-N2-0yt" secondAttribute="leading" constant="8" id="uf4-ac-j6O"/>
+                                                    </constraints>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
                                                     </userDefinedRuntimeAttributes>
-                                                </stackView>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="1oj-oX-nXD" firstAttribute="top" secondItem="BHm-N2-0yt" secondAttribute="top" constant="16" id="1OG-b1-HYz"/>
-                                                <constraint firstAttribute="bottom" secondItem="1oj-oX-nXD" secondAttribute="bottom" constant="16" id="BE3-V0-oNo"/>
-                                                <constraint firstAttribute="trailing" secondItem="1oj-oX-nXD" secondAttribute="trailing" constant="16" id="keQ-sV-ejR"/>
-                                                <constraint firstItem="1oj-oX-nXD" firstAttribute="leading" secondItem="BHm-N2-0yt" secondAttribute="leading" constant="16" id="uf4-ac-j6O"/>
-                                            </constraints>
-                                        </collectionViewCellContentView>
+                                                </collectionViewCellContentView>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <outlet property="picture" destination="2XY-iA-w1b" id="1dp-cO-bxf"/>
+                                                    <outlet property="title" destination="8XK-JK-6cm" id="Dbk-gb-OAe"/>
+                                                </connections>
+                                            </collectionViewCell>
+                                        </cells>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
                                         </userDefinedRuntimeAttributes>
+                                    </collectionView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aLb-mN-zS1">
+                                        <rect key="frame" x="0.0" y="722.66666666666663" width="337" height="34.333333333333371"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Load More"/>
                                         <connections>
-                                            <outlet property="picture" destination="2XY-iA-w1b" id="1dp-cO-bxf"/>
-                                            <outlet property="title" destination="8XK-JK-6cm" id="Dbk-gb-OAe"/>
+                                            <action selector="loadMore:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GXl-Vx-PxL"/>
                                         </connections>
-                                    </collectionViewCell>
-                                </cells>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
-                                </userDefinedRuntimeAttributes>
-                            </collectionView>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="gGr-1V-wwY" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="EVm-wE-ZfE"/>
-                            <constraint firstItem="gGr-1V-wwY" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="LpP-ts-pwx"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="gGr-1V-wwY" secondAttribute="bottom" constant="16" id="a51-6k-DGJ"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="gGr-1V-wwY" secondAttribute="trailing" constant="16" id="s11-Ot-eln"/>
+                            <constraint firstItem="PjT-OP-axo" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="Hz9-50-VKT"/>
+                            <constraint firstItem="PjT-OP-axo" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" symbolic="YES" id="SzH-fJ-lXs"/>
+                            <constraint firstAttribute="bottom" secondItem="PjT-OP-axo" secondAttribute="bottom" constant="20" symbolic="YES" id="WBO-yu-bGN"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="PjT-OP-axo" secondAttribute="trailing" constant="36" id="dGL-jg-Fxq"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="galleryCollectionView" destination="gGr-1V-wwY" id="LvV-FV-7Ic"/>
+                        <outlet property="galleryCollectionView" destination="gGr-1V-wwY" id="6PJ-19-C0H"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

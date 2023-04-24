@@ -7,21 +7,18 @@
 
 import ImageSlideshow
 
-class PhotosViewModel{
-    
-    let photos: Box<Photos?> = Box(nil) // no image initially
-    
-    
-    let dispatchGroup = DispatchGroup()
-    
-    func getPics(page : String) {
+class PhotosViewModel {
+    let photos: Box<GalleryData.Photos?> = Box(nil)
+
+    func getPics(page: String, closure: @escaping () -> Void) {
         let endPoint = Endpoint.gallery(page: page)
-        
-        APIManager.shared.getJSON(url: endPoint.url) { (result: Result<Photos, APIManager.APIError>) in
+
+        APIManager.shared.getJSON(url: endPoint.url) { (result: Result<GalleryData, APIManager.APIError>) in
             switch result {
             case let .success(pics):
-                self.photos.value = pics
-                
+                self.photos.value = pics.photos
+                closure()
+
             case let .failure(error):
                 switch error {
                 case let .error(errorString):
@@ -29,6 +26,5 @@ class PhotosViewModel{
                 }
             }
         }
-        dispatchGroup.leave()
     }
 }

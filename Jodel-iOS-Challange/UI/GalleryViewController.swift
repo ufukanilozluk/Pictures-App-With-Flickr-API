@@ -5,19 +5,109 @@
 //  Created by Ufuk Anıl Özlük on 23.04.2023.
 //
 
-import UIKit
+import ImageSlideshow
 import SkeletonView
+import UIKit
 
 class GalleryViewController: UIViewController {
+    
+    
     @IBOutlet var galleryCollectionView: UICollectionView!
-    
-    var photos : [Photos.Photo]?
+
+    var currentPage : Int = 1
+    var currentPhotoBatch: GalleryData.Photos?
+    var totalPages : Int?
+    var photos: [GalleryData.Photos.Photo] = []
     lazy var refreshControl = UIRefreshControl()
-    
+    let viewModel = PhotosViewModel()
+
     override func viewDidLoad() {
         super.viewDidLoad()
+        configUI()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        fetchData(for: currentPage)
+    }
+    
+    @IBAction func loadMore(_ sender: Any) {
+        if currentPage < totalPages! {
+            currentPage += 1
+            fetchData(for: currentPage)
+        }
+    }
+    //    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+//        if (scrollView.contentOffset.y == scrollView.contentSize.height - scrollView.frame.size.height){
+//            let numberOfPhotos = photos.count
+//            let totalPics = currentPhotoBatch!.total
+//
+//            if numberOfPhotos < totalPics {
+//
+//
+//                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+//                    self.currentPage += 1
+//                    self.fetchData(for: self.currentPage)
+//                }
+//                print("LOOOOOLLLL\(totalPics)")
+//            }
+//        }
+//
+//    }
+
+    func setBindings() {
+        viewModel.photos.bind { [weak self] pics in
+            self?.currentPhotoBatch = pics
+            self?.totalPages = pics?.pages
+            self?.currentPage = Int(pics!.page)!
+            self?.photos += pics!.photo
+        }
+    }
+
+    @objc func didPullToRefresh() {
+        fetchData(for: currentPage)
+        addSkeleton()
+    }
+
+    func fetchData(for page: Int) {
+        
+        viewModel.getPics(page: String(page)) {
+            DispatchQueue.main.async {
+                self.updateUI()
+            }
+        }
+    }
+
+    func configUI() {
+        configureCollectionCellSize()
+
         galleryCollectionView.delegate = self
         galleryCollectionView.dataSource = self
+        addSkeleton()
+        refreshControl.attributedTitle = NSAttributedString(string: "Updating")
+        refreshControl.addTarget(self, action: #selector(didPullToRefresh), for: .valueChanged)
+        galleryCollectionView.addSubview(refreshControl)
+    }
+
+    func configureCollectionCellSize() {
+        
+        let width =  view.frame.size.width-30
+        let layout = galleryCollectionView.collectionViewLayout as! UICollectionViewFlowLayout
+        layout.itemSize = CGSize(width: width, height: width - 50)
+    }
+
+    func updateUI() {
+        setBindings()
+        galleryCollectionView.reloadData()
+        refreshControl.endRefreshing()
+        removeSkeleton()
+    }
+
+    func addSkeleton() {
+        galleryCollectionView.showAnimatedGradientSkeleton()
+    }
+
+    func removeSkeleton() {
+        galleryCollectionView.hideSkeleton()
     }
 }
 
@@ -29,130 +119,22 @@ extension GalleryViewController: UICollectionViewDelegate, SkeletonCollectionVie
     }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        photos?.count ?? 0
+        photos.count
     }
 
     func collectionSkeletonView(_ skeletonView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        photos?.count ?? 0
+        photos.count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: GalleryCollectionViewCell.reuseIdentifier, for: indexPath)
 
         if let cell = cell as? GalleryCollectionViewCell {
-            if let rowData = photos?[indexPath.row] {
-                cell.set(data: rowData, indexPath: indexPath)
-            }
+            let rowData = photos[indexPath.row]
+            cell.set(data: rowData, indexPath: indexPath)
         }
-
         return cell
     }
-    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-//        if indexPath.row == pokemon.count - 1 {
-       //        if let nextURL {
-       //            anasayfaVModel.getPokemon(url: nextURL)
-       //        }
-       //    }
-    }
-}
 
-func setBindings() {
-    viewModel.bigIcon.bind { [weak self] bigIcon in
-        DispatchQueue.main.async {
-            self?.imgWeatherMain.image = bigIcon
-        }
-    }
-
-    viewModel.description.bind { [weak self] description in
-        DispatchQueue.main.async {
-            self?.lblDescription.text = description
-        }
-    }
-
-    viewModel.humidity.bind { [weak self] humidity in
-        DispatchQueue.main.async {
-            self?.lblHumidity.text = humidity
-        }
-    }
-
-    viewModel.wind.bind { [weak self] wind in
-        DispatchQueue.main.async {
-            self?.lblWind.text = wind
-        }
-    }
-
-    viewModel.temperature.bind { [weak self] temperature in
-
-        DispatchQueue.main.async {
-            self?.lblTemperature.text = temperature
-        }
-    }
-
-    viewModel.visibility.bind { [weak self] visibility in
-
-        DispatchQueue.main.async {
-            self?.lblVisibility.text = visibility
-        }
-    }
-    
-
-    viewModel.pressure.bind { [weak self] pressure in
-
-        DispatchQueue.main.async {
-            self?.lblPressure.text = pressure
-        }
-    }
-
-    viewModel.date.bind { [weak self] date in
-
-        DispatchQueue.main.async {
-            self?.lblDate.text = date
-        }
-    }
-
-    viewModel.date.bind { [weak self] date in
-
-        DispatchQueue.main.async {
-            self?.lblDate.text = date
-        }
-    }
-
-    viewModel.weatherData.bind { [weak self] weatherData in
-        self?.dataWeather = weatherData
-    }
-
-    viewModel.weeklyWeatherData.bind { [weak self] weeklyWeatherData in
-        self?.weeklyWeather = weeklyWeatherData
-    }
-}
-
-@objc func didPullToRefresh() {
-    fetchData(for: selectedCity!)
-    addSkeleton()
-}
-
-func configUI() {
-    weeklyWeatherTV.dataSource = self
-    weeklyWeatherTV.delegate = self
-    scrollViewAnasayfa.delegate = self
-    dailyWeatherCV.delegate = self
-    dailyWeatherCV.dataSource = self
-
-    refreshControl.attributedTitle = NSAttributedString(string: "Updating")
-    refreshControl.addTarget(self, action: #selector(didPullToRefresh), for: .valueChanged)
-    scrollViewAnasayfa.addSubview(refreshControl)
-
-    // for skeletonview
-    weeklyWeatherTV.estimatedRowHeight = 50
-    
-}
-
-func updateUI() {
-    setBindings()
-    DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-        self.dailyWeatherCV.reloadData()
-        self.weeklyWeatherTV.reloadData()
-        self.refreshControl.endRefreshing()
-        self.removeSkeleton()
-    }
+   
 }
