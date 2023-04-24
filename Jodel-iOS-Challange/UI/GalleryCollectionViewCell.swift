@@ -5,24 +5,23 @@
 //  Created by Ufuk Anıl Özlük on 23.04.2023.
 //
 
+import ImageSlideshow
 import UIKit
 
 class GalleryCollectionViewCell: UICollectionViewCell {
-    
-    @IBOutlet weak var title: UILabel!
-    @IBOutlet weak var picture: UIImageView!
-    
-    
-//    static let reuseIdentifier: String = "DailyWeatherCVCell"
-//
-//    func set(data: HavaDurum.Hava, indexPath: IndexPath) {
-//        hour.text = indexPath.row == 0 ? "Now" : data.time
-//        imgWeather.image = UIImage(named: data.weather[0].icon)
-//        configImg()
-//    }
-//
-//    func configImg() {
-//        imgWeather.layer.masksToBounds = true
-//        imgWeather.layer.cornerRadius = 12
-//    }
+    @IBOutlet var title: UILabel!
+    @IBOutlet var picture: ImageSlideshow!
+
+    static let reuseIdentifier: String = "GalleryCell"
+
+    func set(data: Photos.Photo, indexPath: IndexPath) {
+        title.text =  data.title
+        addPics(url:data.photoUrl, on: picture)
+    }
+
+     func addPics(url: String, on view: ImageSlideshow) {
+        var alamofireSource: [AlamofireSource] = [AlamofireSource(urlString: url)!]
+        view.setImageInputs(alamofireSource)
+        view.contentScaleMode = UIView.ContentMode.scaleToFill
+     }
 }

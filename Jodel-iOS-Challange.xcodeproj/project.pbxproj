@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		492291FF40517769476C2E83 /* Pods_Jodel_iOS_Challange.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1C234186D0ED4F241AF5074 /* Pods_Jodel_iOS_Challange.framework */; };
 		E13F6EE129F5944D0050050B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13F6EE029F5944D0050050B /* AppDelegate.swift */; };
-		E13F6EE529F5944D0050050B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13F6EE429F5944D0050050B /* ViewController.swift */; };
+		E13F6EE529F5944D0050050B /* GalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13F6EE429F5944D0050050B /* GalleryViewController.swift */; };
 		E13F6EE829F5944D0050050B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E13F6EE629F5944D0050050B /* Main.storyboard */; };
 		E13F6EEA29F5944F0050050B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E13F6EE929F5944F0050050B /* Assets.xcassets */; };
 		E13F6EED29F5944F0050050B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E13F6EEB29F5944F0050050B /* LaunchScreen.storyboard */; };
@@ -21,6 +22,7 @@
 		E13F6F1B29F5D6300050050B /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13F6F1829F5D62F0050050B /* Box.swift */; };
 		E13F6F1C29F5D6300050050B /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13F6F1929F5D62F0050050B /* EndPoint.swift */; };
 		E13F6F1E29F5D72D0050050B /* PhotosViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13F6F1D29F5D72D0050050B /* PhotosViewModel.swift */; };
+		E1A5BF2729F689600095B7A4 /* SkeletonView in Frameworks */ = {isa = PBXBuildFile; productRef = E1A5BF2629F689600095B7A4 /* SkeletonView */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,9 +43,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9722FAB83392DD49F40A88FD /* Pods-Jodel-iOS-Challange.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Jodel-iOS-Challange.release.xcconfig"; path = "Target Support Files/Pods-Jodel-iOS-Challange/Pods-Jodel-iOS-Challange.release.xcconfig"; sourceTree = "<group>"; };
+		B7B5B49DFF2B69FD073CF3C2 /* Pods-Jodel-iOS-Challange.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Jodel-iOS-Challange.debug.xcconfig"; path = "Target Support Files/Pods-Jodel-iOS-Challange/Pods-Jodel-iOS-Challange.debug.xcconfig"; sourceTree = "<group>"; };
 		E13F6EDD29F5944D0050050B /* Jodel-iOS-Challange.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Jodel-iOS-Challange.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E13F6EE029F5944D0050050B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E13F6EE429F5944D0050050B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E13F6EE429F5944D0050050B /* GalleryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryViewController.swift; sourceTree = "<group>"; };
 		E13F6EE729F5944D0050050B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E13F6EE929F5944F0050050B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E13F6EEC29F5944F0050050B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -59,6 +63,7 @@
 		E13F6F1829F5D62F0050050B /* Box.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Box.swift; sourceTree = "<group>"; };
 		E13F6F1929F5D62F0050050B /* EndPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
 		E13F6F1D29F5D72D0050050B /* PhotosViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosViewModel.swift; sourceTree = "<group>"; };
+		E1C234186D0ED4F241AF5074 /* Pods_Jodel_iOS_Challange.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Jodel_iOS_Challange.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +71,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1A5BF2729F689600095B7A4 /* SkeletonView in Frameworks */,
+				492291FF40517769476C2E83 /* Pods_Jodel_iOS_Challange.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,6 +93,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6D34FD815673F44F02AB0676 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E1C234186D0ED4F241AF5074 /* Pods_Jodel_iOS_Challange.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		87B99523B6ED4053DA6489B8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B7B5B49DFF2B69FD073CF3C2 /* Pods-Jodel-iOS-Challange.debug.xcconfig */,
+				9722FAB83392DD49F40A88FD /* Pods-Jodel-iOS-Challange.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		E13F6ED429F5944D0050050B = {
 			isa = PBXGroup;
 			children = (
@@ -93,6 +117,8 @@
 				E13F6EF629F5944F0050050B /* Jodel-iOS-ChallangeTests */,
 				E13F6F0029F5944F0050050B /* Jodel-iOS-ChallangeUITests */,
 				E13F6EDE29F5944D0050050B /* Products */,
+				87B99523B6ED4053DA6489B8 /* Pods */,
+				6D34FD815673F44F02AB0676 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -144,7 +170,7 @@
 		E13F6F1429F5CA7E0050050B /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				E13F6EE429F5944D0050050B /* ViewController.swift */,
+				E13F6EE429F5944D0050050B /* GalleryViewController.swift */,
 				E13F6F1229F5A9D90050050B /* GalleryCollectionViewCell.swift */,
 			);
 			path = UI;
@@ -157,15 +183,20 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = E13F6F0729F5944F0050050B /* Build configuration list for PBXNativeTarget "Jodel-iOS-Challange" */;
 			buildPhases = (
+				669E8FEE01E48172CE9CCEA5 /* [CP] Check Pods Manifest.lock */,
 				E13F6ED929F5944D0050050B /* Sources */,
 				E13F6EDA29F5944D0050050B /* Frameworks */,
 				E13F6EDB29F5944D0050050B /* Resources */,
+				4E3B512E122135639592DD25 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = "Jodel-iOS-Challange";
+			packageProductDependencies = (
+				E1A5BF2629F689600095B7A4 /* SkeletonView */,
+			);
 			productName = "Jodel-iOS-Challange";
 			productReference = E13F6EDD29F5944D0050050B /* Jodel-iOS-Challange.app */;
 			productType = "com.apple.product-type.application";
@@ -238,6 +269,9 @@
 				Base,
 			);
 			mainGroup = E13F6ED429F5944D0050050B;
+			packageReferences = (
+				E1A5BF2529F689600095B7A4 /* XCRemoteSwiftPackageReference "SkeletonView" */,
+			);
 			productRefGroup = E13F6EDE29F5944D0050050B /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -276,6 +310,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		4E3B512E122135639592DD25 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Jodel-iOS-Challange/Pods-Jodel-iOS-Challange-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Jodel-iOS-Challange/Pods-Jodel-iOS-Challange-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Jodel-iOS-Challange/Pods-Jodel-iOS-Challange-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		669E8FEE01E48172CE9CCEA5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Jodel-iOS-Challange-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		E13F6ED929F5944D0050050B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -285,7 +361,7 @@
 				E13F6F1E29F5D72D0050050B /* PhotosViewModel.swift in Sources */,
 				E13F6F1B29F5D6300050050B /* Box.swift in Sources */,
 				E13F6F1C29F5D6300050050B /* EndPoint.swift in Sources */,
-				E13F6EE529F5944D0050050B /* ViewController.swift in Sources */,
+				E13F6EE529F5944D0050050B /* GalleryViewController.swift in Sources */,
 				E13F6F1329F5A9D90050050B /* GalleryCollectionViewCell.swift in Sources */,
 				E13F6EE129F5944D0050050B /* AppDelegate.swift in Sources */,
 				E13F6F1629F5CAC20050050B /* PictureModel.swift in Sources */,
@@ -460,6 +536,7 @@
 		};
 		E13F6F0829F5944F0050050B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = B7B5B49DFF2B69FD073CF3C2 /* Pods-Jodel-iOS-Challange.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -488,6 +565,7 @@
 		};
 		E13F6F0929F5944F0050050B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9722FAB83392DD49F40A88FD /* Pods-Jodel-iOS-Challange.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -626,6 +704,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		E1A5BF2529F689600095B7A4 /* XCRemoteSwiftPackageReference "SkeletonView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Juanpe/SkeletonView.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		E1A5BF2629F689600095B7A4 /* SkeletonView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = E1A5BF2529F689600095B7A4 /* XCRemoteSwiftPackageReference "SkeletonView" */;
+			productName = SkeletonView;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = E13F6ED529F5944D0050050B /* Project object */;
 }

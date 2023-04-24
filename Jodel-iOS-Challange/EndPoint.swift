@@ -24,25 +24,30 @@ extension Endpoint {
     }
 }
 
+// api.flickr.com/services/rest/?method=flickr.galleries.getPhotos&api_key=APIKEY&gallery_id=66911286-72157647277042064&format=json&nojsoncallback=1
+
 extension Endpoint {
-    static func daily(
-        city: String,
-        cnt: String = "7",
-        lang: String = "en",
-        appId: String = "54bfbfe4aa755c3b005fded2b0741fa5",
-        units: String = "metric"
+    static func gallery(
+        method: String = "flickr.galleries.getPhotos",
+        apiKey: String = "92111faaf0ac50706da05a1df2e85d82",
+        galleryId: String = "66911286-72157647277042064",
+        format: String = "json",
+        perPage: String = "3",
+        noJsonCallBack: String = "1",
+        page: String = "1"
     ) -> Self {
         Endpoint(
-            host: "api.openweathermap.org",
-            path: "data/2.5/forecast",
+            host: "api.flickr.com",
+            path: "services/rest/",
             queryItems: [
-                URLQueryItem(name: "appid", value: appId),
-                URLQueryItem(name: "cnt", value: cnt),
-                URLQueryItem(name: "lang", value: lang),
-                URLQueryItem(name: "units", value: units),
-                URLQueryItem(name: "q", value: city),
+                URLQueryItem(name: "method", value: method),
+                URLQueryItem(name: "apiKey", value: apiKey),
+                URLQueryItem(name: "galleryId", value: galleryId),
+                URLQueryItem(name: "format", value: format),
+                URLQueryItem(name: "nojsoncallback", value: noJsonCallBack),
+                URLQueryItem(name: "per_page", value: perPage),
+                URLQueryItem(name: "page", value: page),
             ]
         )
     }
-    
 }
