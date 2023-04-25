@@ -25,6 +25,7 @@ class GalleryCollectionViewCell: UICollectionViewCell {
         let alamofireSource: [AlamofireSource] = [AlamofireSource(urlString: url)!]
         view.setImageInputs(alamofireSource)
         view.contentScaleMode = UIView.ContentMode.scaleToFill
+//        tap to view in fullscreen
         let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(didTap))
         picture.addGestureRecognizer(gestureRecognizer)
     }
@@ -33,18 +34,4 @@ class GalleryCollectionViewCell: UICollectionViewCell {
         guard let parentViewController = parentViewController else { return }
         picture.presentFullScreenController(from: parentViewController)
     }
-
-    //    sliderImageView.currentPageChanged = { page in
-    //        // do whatever you want eg:
-    //        self.sliderOverviewLabel.text = self.upcomingMovies[page].overview
-    //        self.sliderTitleLabel.text = self.upcomingMovies[page].original_title
-    //    }
-    //
-    //    let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(didTap))
-    //    sliderImageView.addGestureRecognizer(gestureRecognizer)
-    // }
-    //
-    // @objc func didTap() {
-    //    let index = sliderImageView.currentPage
-    //    performSegue(withIdentifier: goToDetailSegue, sender: nowPlayingMovies[index].id)
 }

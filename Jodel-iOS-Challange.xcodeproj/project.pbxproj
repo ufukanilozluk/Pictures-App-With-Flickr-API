@@ -23,6 +23,7 @@
 		E13F6F1C29F5D6300050050B /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13F6F1929F5D62F0050050B /* EndPoint.swift */; };
 		E13F6F1E29F5D72D0050050B /* PhotosViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13F6F1D29F5D72D0050050B /* PhotosViewModel.swift */; };
 		E1668E8929F7BF42001D9ED2 /* Test.json in Resources */ = {isa = PBXBuildFile; fileRef = E1668E8829F7BF42001D9ED2 /* Test.json */; };
+		E1668E8B29F7C537001D9ED2 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1668E8A29F7C537001D9ED2 /* Extensions.swift */; };
 		E1A5BF2729F689600095B7A4 /* SkeletonView in Frameworks */ = {isa = PBXBuildFile; productRef = E1A5BF2629F689600095B7A4 /* SkeletonView */; };
 /* End PBXBuildFile section */
 
@@ -65,6 +66,7 @@
 		E13F6F1929F5D62F0050050B /* EndPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
 		E13F6F1D29F5D72D0050050B /* PhotosViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosViewModel.swift; sourceTree = "<group>"; };
 		E1668E8829F7BF42001D9ED2 /* Test.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Test.json; sourceTree = "<group>"; };
+		E1668E8A29F7C537001D9ED2 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		E1C234186D0ED4F241AF5074 /* Pods_Jodel_iOS_Challange.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Jodel_iOS_Challange.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -137,13 +139,10 @@
 		E13F6EDF29F5944D0050050B /* Jodel-iOS-Challange */ = {
 			isa = PBXGroup;
 			children = (
+				E1668E8D29F7D6F8001D9ED2 /* Helpers */,
+				E1668E8C29F7D6D7001D9ED2 /* Network */,
 				E13F6F1429F5CA7E0050050B /* UI */,
 				E13F6EE029F5944D0050050B /* AppDelegate.swift */,
-				E13F6F1529F5CAC20050050B /* PictureModel.swift */,
-				E13F6F1729F5D62E0050050B /* APIManager.swift */,
-				E13F6F1829F5D62F0050050B /* Box.swift */,
-				E13F6F1929F5D62F0050050B /* EndPoint.swift */,
-				E13F6F1D29F5D72D0050050B /* PhotosViewModel.swift */,
 				E13F6EE629F5944D0050050B /* Main.storyboard */,
 				E13F6EE929F5944F0050050B /* Assets.xcassets */,
 				E13F6EEB29F5944F0050050B /* LaunchScreen.storyboard */,
@@ -177,6 +176,26 @@
 				E13F6F1229F5A9D90050050B /* GalleryCollectionViewCell.swift */,
 			);
 			path = UI;
+			sourceTree = "<group>";
+		};
+		E1668E8C29F7D6D7001D9ED2 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				E13F6F1D29F5D72D0050050B /* PhotosViewModel.swift */,
+				E13F6F1529F5CAC20050050B /* PictureModel.swift */,
+				E13F6F1729F5D62E0050050B /* APIManager.swift */,
+				E13F6F1929F5D62F0050050B /* EndPoint.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		E1668E8D29F7D6F8001D9ED2 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				E13F6F1829F5D62F0050050B /* Box.swift */,
+				E1668E8A29F7C537001D9ED2 /* Extensions.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -362,6 +381,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E13F6F1A29F5D6300050050B /* APIManager.swift in Sources */,
+				E1668E8B29F7C537001D9ED2 /* Extensions.swift in Sources */,
 				E13F6F1E29F5D72D0050050B /* PhotosViewModel.swift in Sources */,
 				E13F6F1B29F5D6300050050B /* Box.swift in Sources */,
 				E13F6F1C29F5D6300050050B /* EndPoint.swift in Sources */,

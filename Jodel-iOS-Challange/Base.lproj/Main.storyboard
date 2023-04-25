@@ -111,6 +111,7 @@
                     </view>
                     <connections>
                         <outlet property="galleryCollectionView" destination="gGr-1V-wwY" id="6PJ-19-C0H"/>
+                        <outlet property="loadButton" destination="aLb-mN-zS1" id="B96-f7-Id9"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

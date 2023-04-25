@@ -9,6 +9,7 @@ import ImageSlideshow
 
 class PhotosViewModel {
     let photos: Box<GalleryData.Photos?> = Box(nil)
+    let errorMessage: Box<String?> = Box(nil)
 
     func getPics(page: String, closure: @escaping () -> Void) {
         let endPoint = Endpoint.gallery(page: page)
@@ -17,14 +18,14 @@ class PhotosViewModel {
             switch result {
             case let .success(pics):
                 self.photos.value = pics.photos
-                closure()
 
             case let .failure(error):
                 switch error {
                 case let .error(errorString):
-                    print(errorString)
+                    self.errorMessage.value = errorString
                 }
             }
+            closure()
         }
     }
 }

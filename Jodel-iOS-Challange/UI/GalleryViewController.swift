@@ -12,6 +12,7 @@ import UIKit
 class GalleryViewController: UIViewController {
     @IBOutlet var galleryCollectionView: UICollectionView!
 
+    @IBOutlet weak var loadButton: UIButton!
     var currentPage: Int = 1
     var currentPhotoBatch: GalleryData.Photos?
     var totalPages: Int?
@@ -35,36 +36,26 @@ class GalleryViewController: UIViewController {
         }
     }
 
-    //    func scrollViewDidScroll(_ scrollView: UIScrollView) {
-//        if (scrollView.contentOffset.y == scrollView.contentSize.height - scrollView.frame.size.height){
-//            let numberOfPhotos = photos.count
-//            let totalPics = currentPhotoBatch!.total
-//
-//            if numberOfPhotos < totalPics {
-//
-//
-//                DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-//                    self.currentPage += 1
-//                    self.fetchData(for: self.currentPage)
-//                }
-//                print("LOOOOOLLLL\(totalPics)")
-//            }
-//        }
-//
-//    }
-
     func setBindings() {
+        viewModel.errorMessage.bind { [weak self] error in
+            if let errorMessage = error {
+                self?.showAlert(title: "Error", message: errorMessage)
+                return
+            }
+        }
         viewModel.photos.bind { [weak self] pics in
+            guard let pics = pics else { return }
             self?.currentPhotoBatch = pics
-            self?.totalPages = pics?.pages
-            self?.currentPage = Int(pics!.page)!
-            self?.photos += pics!.photo
+            self?.totalPages = pics.pages
+            self?.currentPage = Int(pics.page)!
+            self?.photos += pics.photo
         }
     }
 
     @objc func didPullToRefresh() {
         photos = []
         currentPage = 1
+        loadButton.isHidden = false
         fetchData(for: currentPage)
         addSkeleton()
     }
@@ -99,8 +90,12 @@ class GalleryViewController: UIViewController {
         galleryCollectionView.reloadData()
         refreshControl.endRefreshing()
         removeSkeleton()
+        if currentPage == totalPages{
+            loadButton.isHidden = true
+        }
     }
 
+//    To add and remove indicator
     func addSkeleton() {
         galleryCollectionView.showAnimatedGradientSkeleton()
     }
@@ -118,7 +113,7 @@ extension GalleryViewController: UICollectionViewDelegate, SkeletonCollectionVie
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         photos.count
     }
-
+//needed for indicator
     func collectionSkeletonView(_ skeletonView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         photos.count
     }
@@ -126,6 +121,7 @@ extension GalleryViewController: UICollectionViewDelegate, SkeletonCollectionVie
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: GalleryCollectionViewCell.reuseIdentifier, for: indexPath)
 
+//        need to send self to display fullscreen mode
         if let cell = cell as? GalleryCollectionViewCell {
             let rowData = photos[indexPath.row]
             cell.set(data: rowData, indexPath: indexPath, parentVC: self)

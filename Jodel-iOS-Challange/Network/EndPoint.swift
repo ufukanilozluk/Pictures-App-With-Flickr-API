@@ -1,5 +1,7 @@
 import Foundation
 
+//To construct URL's 
+
 struct Endpoint {
     var host: String
     var path: String
