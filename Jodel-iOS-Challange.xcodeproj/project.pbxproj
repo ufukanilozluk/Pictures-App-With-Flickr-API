@@ -22,6 +22,7 @@
 		E13F6F1B29F5D6300050050B /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13F6F1829F5D62F0050050B /* Box.swift */; };
 		E13F6F1C29F5D6300050050B /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13F6F1929F5D62F0050050B /* EndPoint.swift */; };
 		E13F6F1E29F5D72D0050050B /* PhotosViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13F6F1D29F5D72D0050050B /* PhotosViewModel.swift */; };
+		E1668E8929F7BF42001D9ED2 /* Test.json in Resources */ = {isa = PBXBuildFile; fileRef = E1668E8829F7BF42001D9ED2 /* Test.json */; };
 		E1A5BF2729F689600095B7A4 /* SkeletonView in Frameworks */ = {isa = PBXBuildFile; productRef = E1A5BF2629F689600095B7A4 /* SkeletonView */; };
 /* End PBXBuildFile section */
 
@@ -63,6 +64,7 @@
 		E13F6F1829F5D62F0050050B /* Box.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Box.swift; sourceTree = "<group>"; };
 		E13F6F1929F5D62F0050050B /* EndPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
 		E13F6F1D29F5D72D0050050B /* PhotosViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosViewModel.swift; sourceTree = "<group>"; };
+		E1668E8829F7BF42001D9ED2 /* Test.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Test.json; sourceTree = "<group>"; };
 		E1C234186D0ED4F241AF5074 /* Pods_Jodel_iOS_Challange.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Jodel_iOS_Challange.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -154,6 +156,7 @@
 			isa = PBXGroup;
 			children = (
 				E13F6EF729F5944F0050050B /* Jodel_iOS_ChallangeTests.swift */,
+				E1668E8829F7BF42001D9ED2 /* Test.json */,
 			);
 			path = "Jodel-iOS-ChallangeTests";
 			sourceTree = "<group>";
@@ -298,6 +301,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E1668E8929F7BF42001D9ED2 /* Test.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
