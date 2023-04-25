@@ -10,13 +10,11 @@ import SkeletonView
 import UIKit
 
 class GalleryViewController: UIViewController {
-    
-    
     @IBOutlet var galleryCollectionView: UICollectionView!
 
-    var currentPage : Int = 1
+    var currentPage: Int = 1
     var currentPhotoBatch: GalleryData.Photos?
-    var totalPages : Int?
+    var totalPages: Int?
     var photos: [GalleryData.Photos.Photo] = []
     lazy var refreshControl = UIRefreshControl()
     let viewModel = PhotosViewModel()
@@ -25,17 +23,18 @@ class GalleryViewController: UIViewController {
         super.viewDidLoad()
         configUI()
     }
-    
+
     override func viewWillAppear(_ animated: Bool) {
         fetchData(for: currentPage)
     }
-    
+
     @IBAction func loadMore(_ sender: Any) {
         if currentPage < totalPages! {
             currentPage += 1
             fetchData(for: currentPage)
         }
     }
+
     //    func scrollViewDidScroll(_ scrollView: UIScrollView) {
 //        if (scrollView.contentOffset.y == scrollView.contentSize.height - scrollView.frame.size.height){
 //            let numberOfPhotos = photos.count
@@ -64,12 +63,13 @@ class GalleryViewController: UIViewController {
     }
 
     @objc func didPullToRefresh() {
+        photos = []
+        currentPage = 1
         fetchData(for: currentPage)
         addSkeleton()
     }
 
     func fetchData(for page: Int) {
-        
         viewModel.getPics(page: String(page)) {
             DispatchQueue.main.async {
                 self.updateUI()
@@ -89,8 +89,7 @@ class GalleryViewController: UIViewController {
     }
 
     func configureCollectionCellSize() {
-        
-        let width =  view.frame.size.width-30
+        let width = view.frame.size.width - 30
         let layout = galleryCollectionView.collectionViewLayout as! UICollectionViewFlowLayout
         layout.itemSize = CGSize(width: width, height: width - 50)
     }
@@ -111,8 +110,6 @@ class GalleryViewController: UIViewController {
     }
 }
 
-
-
 extension GalleryViewController: UICollectionViewDelegate, SkeletonCollectionViewDataSource {
     func collectionSkeletonView(_ skeletonView: UICollectionView, cellIdentifierForItemAt indexPath: IndexPath) -> ReusableCellIdentifier {
         GalleryCollectionViewCell.reuseIdentifier
@@ -131,10 +128,8 @@ extension GalleryViewController: UICollectionViewDelegate, SkeletonCollectionVie
 
         if let cell = cell as? GalleryCollectionViewCell {
             let rowData = photos[indexPath.row]
-            cell.set(data: rowData, indexPath: indexPath)
+            cell.set(data: rowData, indexPath: indexPath, parentVC: self)
         }
         return cell
     }
-
-   
 }

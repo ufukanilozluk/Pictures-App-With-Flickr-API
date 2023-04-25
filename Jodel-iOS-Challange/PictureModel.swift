@@ -13,8 +13,8 @@ extension GalleryData {
     struct Photos : Codable {
         var page: String
         var pages: Int
-        var total : Int
         var perpage: String
+        var total: Int
         var photo: [Photo]
     }
     
