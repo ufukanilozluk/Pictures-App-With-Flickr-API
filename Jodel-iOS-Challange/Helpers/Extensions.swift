@@ -1,21 +1,27 @@
-//
-//  Extensions.swift
-//  Jodel-iOS-Challange
-//
-//  Created by Ufuk Anıl Özlük on 25.04.2023.
-//
-
-import Foundation
 import UIKit
 
 extension UIViewController {
-    func showAlert(title: String, message: String, actionTitle: String = "OK", completion: (() -> Void)? = nil) {
-        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+    /**
+     Presents an alert with the specified title and message.
+
+     - Parameters:
+        - title: The title of the alert.
+        - message: The message body of the alert.
+        - actionTitle: The title of the action button. Default is "OK".
+        - completion: A closure to be executed when the action button is tapped. Default is `nil`.
+        - style: The style of the alert controller. Default is `.alert`.
+        - presentationCompletion: A closure to be executed after the alert is presented. Default is `nil`.
+     */
+    public func showAlert(title: String, message: String, actionTitle: String = "OK", completion: (() -> Void)? = nil, style: UIAlertController.Style = .alert, presentationCompletion: (() -> Void)? = nil) {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: style)
+
         let action = UIAlertAction(title: actionTitle, style: .default) { _ in
             completion?()
         }
         alertController.addAction(action)
 
-        present(alertController, animated: true, completion: nil)
+        DispatchQueue.main.async {
+            self.present(alertController, animated: true, completion: presentationCompletion)
+        }
     }
 }
