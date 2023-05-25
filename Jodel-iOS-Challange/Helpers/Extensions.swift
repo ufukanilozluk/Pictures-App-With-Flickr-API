@@ -12,7 +12,7 @@ extension UIViewController {
         - style: The style of the alert controller. Default is `.alert`.
         - presentationCompletion: A closure to be executed after the alert is presented. Default is `nil`.
      */
-    public func showAlert(title: String, message: String, actionTitle: String = "OK", completion: (() -> Void)? = nil, style: UIAlertController.Style = .alert, presentationCompletion: (() -> Void)? = nil) {
+    func showAlert(title: String, message: String, actionTitle: String = "OK", completion: (() -> Void)? = nil, style: UIAlertController.Style = .alert, presentationCompletion: (() -> Void)? = nil) {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: style)
 
         let action = UIAlertAction(title: actionTitle, style: .default) { _ in

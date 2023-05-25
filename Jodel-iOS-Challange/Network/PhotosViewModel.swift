@@ -8,8 +8,8 @@
 import ImageSlideshow
 
 class PhotosViewModel {
-    let photos: Box<GalleryData.Photos?> = Box(nil)
-    let errorMessage: Box<String?> = Box(nil)
+    let photos: ObservableValue<GalleryData.Photos?> = ObservableValue(nil)
+    let errorMessage: ObservableValue<String?> = ObservableValue(nil)
 
     func getPics(page: String, closure: @escaping () -> Void) {
         let endPoint = Endpoint.gallery(page: page)

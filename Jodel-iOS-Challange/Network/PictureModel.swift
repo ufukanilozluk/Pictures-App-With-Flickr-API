@@ -1,35 +1,26 @@
-//
-//  PictureModel.swift
-//  Jodel-iOS-Challange
-//
-//  Created by Ufuk Anıl Özlük on 23.04.2023.
-//
-
-struct GalleryData: Codable{
-    var photos : Photos
-}
-
-extension GalleryData {
-    struct Photos : Codable {
-        var page: String
-        var pages: Int
-        var perpage: String
-        var total: Int
-        var photo: [Photo]
+struct GalleryData: Codable {
+    let photos: Photos
+    
+    // Represents the gallery data containing photos
+    struct Photos: Codable {
+        let page: Int        // The current page number
+        let pages: Int       // The total number of pages
+        let perPage: String
+        let total: Int       // The total number of photos
+        let photo: [Photo]
     }
     
-}
-
-
-extension GalleryData.Photos {
-    struct Photo : Codable {
-        var id: String
-        var secret: String
-        var server: String
-        var farm: Int
-        var title: String
-        var photoUrl : String {
-        "https://farm\(farm).staticflickr.com/\(server)/\(id)_\(secret).jpg"
+    // Represents a photo in the gallery
+    struct Photo: Codable {
+        let id: String
+        let secret: String   // The secret key of the photo
+        let server: String   // The server hosting the photo
+        let farm: Int        // The farm ID associated with the photo
+        let title: String
+        
+        // Computed property representing the URL of the photo
+        var photoURL: String {
+            return "https://farm\(farm).staticflickr.com/\(server)/\(id)_\(secret).jpg"
         }
     }
 }
