@@ -13,7 +13,7 @@ class PhotosViewModel {
 
     func getPics(page: String, closure: @escaping () -> Void) {
         let endPoint = Endpoint.gallery(page: page)
-
+         print("sdfsdfsdf")
         APIManager.shared.getJSON(url: endPoint.url) { (result: Result<GalleryData, APIManager.APIError>) in
             switch result {
             case let .success(pics):

@@ -17,7 +17,7 @@ class GalleryCollectionViewCell: UICollectionViewCell {
 
     func set(data: GalleryData.Photos.Photo, indexPath: IndexPath, parentVC: UIViewController) {
         title.text = data.title
-        addPics(url: data.photoUrl, on: picture)
+        addPics(url: data.photoURL, on: picture)
         parentViewController = parentVC
     }
 
