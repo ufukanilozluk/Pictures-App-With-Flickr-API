@@ -14,8 +14,6 @@
 		E13F6EEA29F5944F0050050B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E13F6EE929F5944F0050050B /* Assets.xcassets */; };
 		E13F6EED29F5944F0050050B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E13F6EEB29F5944F0050050B /* LaunchScreen.storyboard */; };
 		E13F6EF829F5944F0050050B /* Jodel_iOS_ChallangeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13F6EF729F5944F0050050B /* Jodel_iOS_ChallangeTests.swift */; };
-		E13F6F0229F5944F0050050B /* Jodel_iOS_ChallangeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13F6F0129F5944F0050050B /* Jodel_iOS_ChallangeUITests.swift */; };
-		E13F6F0429F5944F0050050B /* Jodel_iOS_ChallangeUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13F6F0329F5944F0050050B /* Jodel_iOS_ChallangeUITestsLaunchTests.swift */; };
 		E13F6F1329F5A9D90050050B /* GalleryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13F6F1229F5A9D90050050B /* GalleryCollectionViewCell.swift */; };
 		E13F6F1629F5CAC20050050B /* PictureModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13F6F1529F5CAC20050050B /* PictureModel.swift */; };
 		E13F6F1A29F5D6300050050B /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13F6F1729F5D62E0050050B /* APIManager.swift */; };
@@ -57,8 +55,6 @@
 		E13F6EF329F5944F0050050B /* Jodel-iOS-ChallangeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Jodel-iOS-ChallangeTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E13F6EF729F5944F0050050B /* Jodel_iOS_ChallangeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Jodel_iOS_ChallangeTests.swift; sourceTree = "<group>"; };
 		E13F6EFD29F5944F0050050B /* Jodel-iOS-ChallangeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Jodel-iOS-ChallangeUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		E13F6F0129F5944F0050050B /* Jodel_iOS_ChallangeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Jodel_iOS_ChallangeUITests.swift; sourceTree = "<group>"; };
-		E13F6F0329F5944F0050050B /* Jodel_iOS_ChallangeUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Jodel_iOS_ChallangeUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		E13F6F1229F5A9D90050050B /* GalleryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GalleryCollectionViewCell.swift; sourceTree = "<group>"; };
 		E13F6F1529F5CAC20050050B /* PictureModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureModel.swift; sourceTree = "<group>"; };
 		E13F6F1729F5D62E0050050B /* APIManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
@@ -119,7 +115,6 @@
 			children = (
 				E13F6EDF29F5944D0050050B /* Jodel-iOS-Challange */,
 				E13F6EF629F5944F0050050B /* Jodel-iOS-ChallangeTests */,
-				E13F6F0029F5944F0050050B /* Jodel-iOS-ChallangeUITests */,
 				E13F6EDE29F5944D0050050B /* Products */,
 				87B99523B6ED4053DA6489B8 /* Pods */,
 				6D34FD815673F44F02AB0676 /* Frameworks */,
@@ -158,15 +153,6 @@
 				E1668E8829F7BF42001D9ED2 /* Test.json */,
 			);
 			path = "Jodel-iOS-ChallangeTests";
-			sourceTree = "<group>";
-		};
-		E13F6F0029F5944F0050050B /* Jodel-iOS-ChallangeUITests */ = {
-			isa = PBXGroup;
-			children = (
-				E13F6F0129F5944F0050050B /* Jodel_iOS_ChallangeUITests.swift */,
-				E13F6F0329F5944F0050050B /* Jodel_iOS_ChallangeUITestsLaunchTests.swift */,
-			);
-			path = "Jodel-iOS-ChallangeUITests";
 			sourceTree = "<group>";
 		};
 		E13F6F1429F5CA7E0050050B /* UI */ = {
@@ -422,8 +408,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E13F6F0229F5944F0050050B /* Jodel_iOS_ChallangeUITests.swift in Sources */,
-				E13F6F0429F5944F0050050B /* Jodel_iOS_ChallangeUITestsLaunchTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
