@@ -5,9 +5,9 @@ struct GalleryData: Codable {
 
 extension GalleryData {
   struct Photos: Codable {
-    let page: Int // The current page number
+    let page: String // The current page number
     let pages: Int // The total number of pages
-    let perPage: String
+    let perpage: String
     let total: Int // The total number of photos
     let photo: [Photo]
   }

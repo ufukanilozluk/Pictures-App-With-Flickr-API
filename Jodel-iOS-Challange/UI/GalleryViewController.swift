@@ -41,7 +41,7 @@ class GalleryViewController: UIViewController {
       guard let pics = pics else { return }
       self?.currentPhotoBatch = pics
       self?.totalPages = pics.pages
-      self?.currentPage = Int(exactly: pics.page)!
+      self?.currentPage = Int(pics.page)!
       self?.photos += pics.photo
     }
   }

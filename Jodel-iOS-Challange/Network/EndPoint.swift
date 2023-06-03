@@ -1,7 +1,5 @@
 import Foundation
 
-// To construct URL's
-
 struct Endpoint {
   var host: String
   var path: String
@@ -24,9 +22,11 @@ extension Endpoint {
   }
 }
 
-// api.flickr.com/services/rest/?method=flickr.galleries.getPhotos&api_key=APIKEY&gallery_id=66911286-72157647277042064&format=json&nojsoncallback=1
+
 
 extension Endpoint {
+  //  To construct endpoint for gallery URL
+  //  URL Sample: api.flickr.com/services/rest/?method=flickr.galleries.getPhotos&api_key=APIKEY&gallery_id=66911286-72157647277042064&format=json&nojsoncallback=1
   static func gallery(
     method: String = "flickr.galleries.getPhotos",
     apiKey: String = "92111faaf0ac50706da05a1df2e85d82",
