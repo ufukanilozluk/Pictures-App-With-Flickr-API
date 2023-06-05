@@ -22,8 +22,6 @@ extension Endpoint {
   }
 }
 
-
-
 extension Endpoint {
   //  To construct endpoint for gallery URL
   //  URL Sample: api.flickr.com/services/rest/?method=flickr.galleries.getPhotos&api_key=APIKEY&gallery_id=66911286-72157647277042064&format=json&nojsoncallback=1
