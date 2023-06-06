@@ -10,39 +10,41 @@ class APIManager {
     keyDecodingStrategy: JSONDecoder.KeyDecodingStrategy = .useDefaultKeys,
     completion: @escaping (Result<T, APIError>) -> Void
   ) {
-    let request = URLRequest(url: url)
-    URLSession.shared.dataTask(with: request) { data, response, error in
-      if let error = error {
-        completion(.failure(.networkError(error.localizedDescription)))
-        return
+    DispatchQueue.global().async {
+      let request = URLRequest(url: url)
+      URLSession.shared.dataTask(with: request) { data, response, error in
+        if let error = error {
+          completion(.failure(.networkError(error.localizedDescription)))
+          return
+        }
+        guard let httpResponse = response as? HTTPURLResponse else {
+          completion(.failure(.invalidResponse))
+          return
+        }
+        guard (200...299).contains(httpResponse.statusCode) else {
+          completion(.failure(.requestFailed(httpResponse.statusCode)))
+          return
+        }
+        guard let data = data else {
+          completion(.failure(.noData))
+          return
+        }
+        let decoder = JSONDecoder()
+        decoder.dateDecodingStrategy = dateDecodingStrategy
+        decoder.keyDecodingStrategy = keyDecodingStrategy
+        print(url)
+        do {
+          let decodedData = try decoder.decode(T.self, from: data)
+          completion(.success(decodedData))
+          return
+        } catch let decodingError {
+          // print(String(describing: decodingError)) Use this for debug
+          completion(.failure(.decodingFailed(decodingError.localizedDescription)))
+          return
+        }
       }
-      guard let httpResponse = response as? HTTPURLResponse else {
-        completion(.failure(.invalidResponse))
-        return
-      }
-      guard (200...299).contains(httpResponse.statusCode) else {
-        completion(.failure(.requestFailed(httpResponse.statusCode)))
-        return
-      }
-      guard let data = data else {
-        completion(.failure(.noData))
-        return
-      }
-      let decoder = JSONDecoder()
-      decoder.dateDecodingStrategy = dateDecodingStrategy
-      decoder.keyDecodingStrategy = keyDecodingStrategy
-      print(url)
-      do {
-        let decodedData = try decoder.decode(T.self, from: data)
-        completion(.success(decodedData))
-        return
-      } catch let decodingError {
-        // print(String(describing: decodingError)) Use this for debug
-        completion(.failure(.decodingFailed(decodingError.localizedDescription)))
-        return
-      }
+      .resume()
     }
-    .resume()
   }
 }
 
