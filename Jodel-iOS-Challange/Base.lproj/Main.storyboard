@@ -3,7 +3,7 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21679"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="collection view cell content view" minToolsVersion="11.0"/>
@@ -19,10 +19,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="PjT-OP-axo">
-                                <rect key="frame" x="20" y="75" width="337" height="757"/>
+                                <rect key="frame" x="20" y="20" width="353" height="812"/>
                                 <subviews>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="gGr-1V-wwY">
-                                        <rect key="frame" x="0.0" y="0.0" width="337" height="722.66666666666663"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="353" height="722.66666666666663"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="rsd-EZ-XII">
                                             <size key="itemSize" width="128" height="128"/>
@@ -38,22 +38,22 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <subviews>
-                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="1oj-oX-nXD">
-                                                            <rect key="frame" x="8" y="8" width="112" height="112"/>
+                                                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="1oj-oX-nXD">
+                                                            <rect key="frame" x="20" y="20" width="88" height="88"/>
                                                             <subviews>
-                                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2XY-iA-w1b" customClass="ImageSlideshow" customModule="ImageSlideshow">
-                                                                    <rect key="frame" x="0.0" y="0.0" width="112" height="112"/>
+                                                                <view contentMode="scaleToFill" verticalHuggingPriority="999" translatesAutoresizingMaskIntoConstraints="NO" id="2XY-iA-w1b" customClass="ImageSlideshow" customModule="ImageSlideshow">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="88" height="83"/>
                                                                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                                                     <constraints>
-                                                                        <constraint firstAttribute="height" constant="240" id="va1-MG-sbg"/>
+                                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="240" id="tSa-2j-j8U"/>
                                                                     </constraints>
                                                                     <userDefinedRuntimeAttributes>
                                                                         <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
                                                                     </userDefinedRuntimeAttributes>
                                                                 </view>
-                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8XK-JK-6cm">
-                                                                    <rect key="frame" x="0.0" y="112" width="112" height="0.0"/>
-                                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="251" text="Label" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8XK-JK-6cm">
+                                                                    <rect key="frame" x="0.0" y="88" width="88" height="0.0"/>
+                                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleFootnote"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
                                                                     <userDefinedRuntimeAttributes>
@@ -67,10 +67,10 @@
                                                         </stackView>
                                                     </subviews>
                                                     <constraints>
-                                                        <constraint firstItem="1oj-oX-nXD" firstAttribute="top" secondItem="BHm-N2-0yt" secondAttribute="top" constant="8" id="1OG-b1-HYz"/>
-                                                        <constraint firstAttribute="bottom" secondItem="1oj-oX-nXD" secondAttribute="bottom" constant="8" id="BE3-V0-oNo"/>
-                                                        <constraint firstAttribute="trailing" secondItem="1oj-oX-nXD" secondAttribute="trailing" constant="8" id="keQ-sV-ejR"/>
-                                                        <constraint firstItem="1oj-oX-nXD" firstAttribute="leading" secondItem="BHm-N2-0yt" secondAttribute="leading" constant="8" id="uf4-ac-j6O"/>
+                                                        <constraint firstAttribute="trailing" secondItem="1oj-oX-nXD" secondAttribute="trailing" constant="20" symbolic="YES" id="RmE-tS-sm9"/>
+                                                        <constraint firstItem="1oj-oX-nXD" firstAttribute="leading" secondItem="BHm-N2-0yt" secondAttribute="leading" constant="20" symbolic="YES" id="UEK-52-VHf"/>
+                                                        <constraint firstItem="1oj-oX-nXD" firstAttribute="top" secondItem="BHm-N2-0yt" secondAttribute="top" constant="20" symbolic="YES" id="h8m-gW-fxb"/>
+                                                        <constraint firstAttribute="bottom" secondItem="1oj-oX-nXD" secondAttribute="bottom" constant="20" symbolic="YES" id="od9-PR-81y"/>
                                                     </constraints>
                                                     <userDefinedRuntimeAttributes>
                                                         <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
@@ -90,7 +90,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </collectionView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aLb-mN-zS1">
-                                        <rect key="frame" x="0.0" y="722.66666666666663" width="337" height="34.333333333333371"/>
+                                        <rect key="frame" x="0.0" y="722.66666666666663" width="353" height="89.333333333333371"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Load More"/>
                                         <connections>
@@ -103,10 +103,10 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="PjT-OP-axo" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="Hz9-50-VKT"/>
-                            <constraint firstItem="PjT-OP-axo" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" symbolic="YES" id="SzH-fJ-lXs"/>
-                            <constraint firstAttribute="bottom" secondItem="PjT-OP-axo" secondAttribute="bottom" constant="20" symbolic="YES" id="WBO-yu-bGN"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="PjT-OP-axo" secondAttribute="trailing" constant="36" id="dGL-jg-Fxq"/>
+                            <constraint firstItem="PjT-OP-axo" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" symbolic="YES" id="64M-28-D1A"/>
+                            <constraint firstItem="PjT-OP-axo" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="20" symbolic="YES" id="gk9-oT-2VO"/>
+                            <constraint firstAttribute="trailing" secondItem="PjT-OP-axo" secondAttribute="trailing" constant="20" symbolic="YES" id="gyc-yL-jkb"/>
+                            <constraint firstAttribute="bottom" secondItem="PjT-OP-axo" secondAttribute="bottom" constant="20" symbolic="YES" id="xrs-Yr-Xje"/>
                         </constraints>
                     </view>
                     <connections>
@@ -116,7 +116,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="55" y="-34"/>
+            <point key="canvasLocation" x="54.198473282442748" y="-34.507042253521128"/>
         </scene>
     </scenes>
     <resources>

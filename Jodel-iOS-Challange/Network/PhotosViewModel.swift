@@ -1,10 +1,3 @@
-//
-//  PhotosViewModel.swift
-//  Jodel-iOS-Challange
-//
-//  Created by Ufuk Anıl Özlük on 24.04.2023.
-//
-
 import ImageSlideshow
 
 class PhotosViewModel {

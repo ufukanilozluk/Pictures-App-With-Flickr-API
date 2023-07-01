@@ -2,7 +2,7 @@ import ImageSlideshow
 import SkeletonView
 import UIKit
 
-class GalleryViewController: UIViewController {
+final class GalleryViewController: UIViewController {
   @IBOutlet var galleryCollectionView: UICollectionView!
 
   @IBOutlet weak var loadButton: UIButton!
@@ -30,12 +30,13 @@ class GalleryViewController: UIViewController {
     }
   }
 
+
   func setBindings() {
     viewModel.errorMessage.bind { [weak self] error in
-      if let errorMessage = error {
-        self?.showAlert(title: "Error", message: errorMessage)
-        return
-      }
+    if let errorMessage = error {
+      self?.showAlert(title: "Error", message: errorMessage)
+      return
+    }
     }
     viewModel.photos.bind { [weak self] pics in
       guard let pics = pics else { return }
@@ -46,13 +47,13 @@ class GalleryViewController: UIViewController {
     }
   }
 
-    @objc func didPullToRefresh() {
-      photos = []
-      currentPage = 1
-      loadButton.isHidden = false
-      fetchData(for: currentPage)
-      addSkeleton()
-    }
+  @objc private func didPullToRefresh() {
+    photos = []
+    currentPage = 1
+    loadButton.isHidden = false
+    fetchData(for: currentPage)
+    addSkeleton()
+  }
 
     func fetchData(for page: Int) {
       viewModel.getPics(page: String(page)) {
@@ -64,7 +65,6 @@ class GalleryViewController: UIViewController {
 
   func configUI() {
     configureCollectionCellSize()
-
     galleryCollectionView.delegate = self
     galleryCollectionView.dataSource = self
     addSkeleton()
@@ -74,9 +74,9 @@ class GalleryViewController: UIViewController {
   }
 
   func configureCollectionCellSize() {
-    let width = view.frame.size.width - 30
+    let width = view.frame.size.width
     let layout = galleryCollectionView.collectionViewLayout as! UICollectionViewFlowLayout
-    layout.itemSize = CGSize(width: width, height: width - 50)
+    layout.itemSize = CGSize(width: width, height: width)
   }
 
   func updateUI() {

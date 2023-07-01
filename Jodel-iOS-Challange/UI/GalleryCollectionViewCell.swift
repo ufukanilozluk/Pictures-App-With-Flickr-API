@@ -1,10 +1,3 @@
-//
-//  GalleryCollectionViewCell.swift
-//  Jodel-iOS-Challange
-//
-//  Created by Ufuk Anıl Özlük on 23.04.2023.
-//
-
 import ImageSlideshow
 import UIKit
 

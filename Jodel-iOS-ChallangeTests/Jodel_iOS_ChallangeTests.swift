@@ -1,10 +1,3 @@
-//
-//  Jodel_iOS_ChallangeTests.swift
-//  Jodel-iOS-ChallangeTests
-//
-//  Created by Ufuk Anıl Özlük on 23.04.2023.
-//
-
 import XCTest
 @testable import Jodel_iOS_Challange
 
