@@ -14,12 +14,15 @@ class GalleryCollectionViewCell: UICollectionViewCell {
   }
 
   func addPics(url: String, on view: ImageSlideshow) {
-    let alamofireSource: [AlamofireSource] = [AlamofireSource(urlString: url)!]
-    view.setImageInputs(alamofireSource)
-    view.contentScaleMode = UIView.ContentMode.scaleToFill
-    // tap to view in fullscreen
-    let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(didTap))
-    picture.addGestureRecognizer(gestureRecognizer)
+    guard let alamofireSource = AlamofireSource(urlString: url) else {
+      return
+    }
+      let alamofireSourceArray: [AlamofireSource] = [alamofireSource]
+      view.setImageInputs(alamofireSourceArray)
+      view.contentScaleMode = UIView.ContentMode.scaleToFill
+      // tap to view in fullscreen
+      let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(didTap))
+      picture.addGestureRecognizer(gestureRecognizer)
   }
 
   @objc func didTap() {

@@ -94,7 +94,7 @@
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Load More"/>
                                         <connections>
-                                            <action selector="loadMore:" destination="BYZ-38-t0r" eventType="touchUpInside" id="GXl-Vx-PxL"/>
+                                            <action selector="btnLoadMore:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DQN-A2-6Si"/>
                                         </connections>
                                     </button>
                                 </subviews>

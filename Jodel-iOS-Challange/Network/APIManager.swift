@@ -13,11 +13,8 @@ class CachableResponse: Codable {
 }
 
 class APIManager {
-  
   static let shared = APIManager()
   private init() {}
-  
-  
 
   private let cache = NSCache<NSString, CachableResponse>()
   private let cacheExpirationInterval: TimeInterval = 3600

@@ -23,11 +23,17 @@ final class GalleryViewController: UIViewController {
     fetchData(for: currentPage)
   }
 
-  @IBAction func loadMore(_ sender: Any) {
-    if currentPage < totalPages! {
-      currentPage += 1
-      fetchData(for: currentPage)
+  private func loadMore() {
+    if let totalPages = totalPages {
+      if currentPage < totalPages {
+        currentPage += 1
+        fetchData(for: currentPage)
+      }
     }
+  }
+
+  @IBAction func btnLoadMore(_ sender: Any) {
+    loadMore()
   }
 
 
@@ -42,7 +48,9 @@ final class GalleryViewController: UIViewController {
       guard let pics = pics else { return }
       self?.currentPhotoBatch = pics
       self?.totalPages = pics.pages
-      self?.currentPage = Int(pics.page)!
+      if let currentPage = Int(pics.page) {
+        self?.currentPage = currentPage
+      }
       self?.photos += pics.photo
     }
   }
@@ -74,9 +82,10 @@ final class GalleryViewController: UIViewController {
   }
 
   func configureCollectionCellSize() {
-    let width = view.frame.size.width
-    let layout = galleryCollectionView.collectionViewLayout as! UICollectionViewFlowLayout
-    layout.itemSize = CGSize(width: width, height: width)
+    if let layout = galleryCollectionView.collectionViewLayout as? UICollectionViewFlowLayout {
+      let width = view.frame.size.width
+      layout.itemSize = CGSize(width: width, height: width)
+    }
   }
 
   func updateUI() {
