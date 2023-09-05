@@ -1,10 +1,11 @@
 import ImageSlideshow
 
-class PhotosViewModel {
+final class PhotosViewModel {
   let photos: ObservableValue<GalleryData.Photos?> = ObservableValue(nil)
   let errorMessage: ObservableValue<String?> = ObservableValue(nil)
 
   func getPics(page: String, closure: @escaping () -> Void) {
+  
     let endPoint = Endpoint.gallery(page: page)
     APIManager.shared.getJSON(url: endPoint.url) { (result: Result<GalleryData, APIManager.APIError>) in
       switch result {
