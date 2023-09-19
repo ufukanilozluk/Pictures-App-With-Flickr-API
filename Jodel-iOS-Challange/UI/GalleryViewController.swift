@@ -2,16 +2,23 @@ import ImageSlideshow
 import SkeletonView
 import UIKit
 
+/// View controller responsible for displaying a gallery of photos.
 final class GalleryViewController: UIViewController {
-  @IBOutlet var galleryCollectionView: UICollectionView!
+  // MARK: - Outlets
 
+  @IBOutlet var galleryCollectionView: UICollectionView!
   @IBOutlet weak var loadButton: UIButton!
+
+  // MARK: - Properties
+
   var currentPage: Int = 1
   var currentPhotoBatch: GalleryData.Photos?
   var totalPages: Int?
   var photos: [GalleryData.Photos.Photo] = []
   lazy var refreshControl = UIRefreshControl()
   let viewModel = PhotosViewModel()
+
+  // MARK: - View Lifecycle
 
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -23,26 +30,22 @@ final class GalleryViewController: UIViewController {
     fetchData(for: currentPage)
   }
 
-  private func loadMore() {
-    if let totalPages = totalPages {
-      if currentPage < totalPages {
-        currentPage += 1
-        fetchData(for: currentPage)
-      }
-    }
-  }
+  // MARK: - Actions
 
+  /// Loads more photos when the "Load More" button is pressed.
   @IBAction func btnLoadMore(_ sender: Any) {
     loadMore()
   }
 
+  // MARK: - Helper Methods
 
+  /// Sets up data bindings for view model properties.
   func setBindings() {
     viewModel.errorMessage.bind { [weak self] error in
-    if let errorMessage = error {
-      self?.showAlert(title: "Error", message: errorMessage)
-      return
-    }
+      if let errorMessage = error {
+        self?.showAlert(title: "Error", message: errorMessage)
+        return
+      }
     }
     viewModel.photos.bind { [weak self] pics in
       guard let pics = pics else { return }
@@ -55,6 +58,20 @@ final class GalleryViewController: UIViewController {
     }
   }
 
+  /// Loads more pics
+  private func loadMore() {
+    if let totalPages = totalPages {
+      if currentPage < totalPages {
+        currentPage += 1
+        fetchData(for: currentPage)
+      }
+    }
+  }
+
+
+  // MARK: - UI and Data Handling
+
+  /// Handles the "Pull to Refresh" action.
   @objc private func didPullToRefresh() {
     photos = []
     currentPage = 1
@@ -63,14 +80,17 @@ final class GalleryViewController: UIViewController {
     addSkeleton()
   }
 
-    func fetchData(for page: Int) {
-      viewModel.getPics(page: String(page)) {
-        DispatchQueue.main.async {
-          self.updateUI()
-        }
+  /// Fetches photos for a specific page.
+  /// - Parameter page: The page number to fetch.
+  func fetchData(for page: Int) {
+    viewModel.getPics(page: String(page)) {
+      DispatchQueue.main.async {
+        self.updateUI()
       }
     }
+  }
 
+  /// Configures the UI elements.
   func configUI() {
     configureCollectionCellSize()
     galleryCollectionView.delegate = self
@@ -81,6 +101,7 @@ final class GalleryViewController: UIViewController {
     galleryCollectionView.addSubview(refreshControl)
   }
 
+  /// Configures the size of collection view cells based on the view width.
   func configureCollectionCellSize() {
     if let layout = galleryCollectionView.collectionViewLayout as? UICollectionViewFlowLayout {
       let width = view.frame.size.width
@@ -88,6 +109,7 @@ final class GalleryViewController: UIViewController {
     }
   }
 
+  /// Updates the UI after data is fetched.
   func updateUI() {
     setBindings()
     galleryCollectionView.reloadData()
@@ -97,37 +119,47 @@ final class GalleryViewController: UIViewController {
       loadButton.isHidden = true
     }
   }
-  // To add and remove indicator
+
+  /// Adds a skeleton loading animation to the collection view.
   func addSkeleton() {
     galleryCollectionView.showAnimatedGradientSkeleton()
   }
+
+  /// Removes the skeleton loading animation from the collection view.
   func removeSkeleton() {
     galleryCollectionView.hideSkeleton()
   }
 }
 
+// MARK: - UICollectionViewDelegate and SkeletonCollectionViewDataSource
+
 extension GalleryViewController: UICollectionViewDelegate, SkeletonCollectionViewDataSource {
+  // MARK: - SkeletonCollectionViewDataSource Methods
+
   func collectionSkeletonView(_ skeletonView: UICollectionView, cellIdentifierForItemAt indexPath: IndexPath) -> ReusableCellIdentifier {
     GalleryCollectionViewCell.reuseIdentifier
   }
-  func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    photos.count
-  }
-// needed for indicator
+
   func collectionSkeletonView(_ skeletonView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
     photos.count
   }
+
+  // MARK: - UICollectionViewDelegate Methods
+
+  func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    photos.count
+  }
+
   func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
     let cell = collectionView.dequeueReusableCell(
       withReuseIdentifier: GalleryCollectionViewCell.reuseIdentifier,
       for: indexPath
     )
 
-// need to send self to display fullscreen mode
-  if let cell = cell as? GalleryCollectionViewCell {
-    let rowData = photos[indexPath.row]
-    cell.set(data: rowData, indexPath: indexPath, parentVC: self)
-  }
+    if let cell = cell as? GalleryCollectionViewCell {
+      let rowData = photos[indexPath.row]
+      cell.set(data: rowData, indexPath: indexPath, parentVC: self)
+    }
     return cell
   }
 }

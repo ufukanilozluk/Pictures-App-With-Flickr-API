@@ -11,20 +11,16 @@ final class ObservableValue<T> {
 
   private var listener: ListenerType?
 
-  /**
-    Initializes an `ObservableValue` with an initial value.
-   
-    - Parameter value: The initial value.
-    */
+  /// Initializes an `ObservableValue` with an initial value.
+  ///
+  /// - Parameter value: The initial value.
   init(_ value: T) {
     self.value = value
   }
 
-  /**
-    Binds a listener to the observable value.
-   
-    - Parameter listener: The closure to be called whenever the value changes.
-    */
+  /// Binds a listener to the observable value.
+  ///
+  /// - Parameter listener: The closure to be called whenever the value changes.
   func bind(listener: ListenerType?) {
     self.listener = listener
     listener?(value)

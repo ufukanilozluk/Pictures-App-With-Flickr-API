@@ -4,17 +4,14 @@ import ImageSlideshow
 final class PhotosViewModel {
   /// Observable value holding the photos data.
   let photos: ObservableValue<GalleryData.Photos?> = ObservableValue(nil)
-
-
   /// Observable value holding error messages.
   let errorMessage: ObservableValue<String?> = ObservableValue(nil)
-  /**
-  Retrieves photos data from the API.
-  
-  - Parameters:
-    - page: The page of photos to retrieve.
-    - closure: A closure to be executed after the API call is completed.
-  */
+
+  /// Retrieves photos data from the API.
+  ///
+  /// - Parameters:
+  ///   - page: The page of photos to retrieve.
+  ///   - closure: A closure to be executed after the API call is completed.
   func getPics(page: String, closure: @escaping () -> Void) {
     let endPoint = Endpoint.gallery(page: page)
     APIManager.shared.getJSON(url: endPoint.url) { (result: Result<GalleryData, APIManager.APIError>) in
