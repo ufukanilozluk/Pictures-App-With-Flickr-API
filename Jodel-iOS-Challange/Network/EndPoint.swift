@@ -4,10 +4,8 @@ import Foundation
 struct Endpoint {
   /// Represents the host name of the API server (e.g., "api.example.com").
   var host: String
-
   /// Represents the path of the API request (e.g., "/api/resource").
   var path: String
-
   /// An array containing query items for the API request.
   var queryItems: [URLQueryItem] = []
 
@@ -16,7 +14,6 @@ struct Endpoint {
   /// - Parameters:
   ///   - name: The name of the query item.
   ///   - value: The value of the query item.
-
   mutating func addQueryItem(name: String, value: String) {
     queryItems.append(URLQueryItem(name: name, value: value))
   }
@@ -34,7 +31,6 @@ struct Endpoint {
     guard let url = components.url else {
       fatalError("Invalid URL components: \(components)")
     }
-
     return url
   }
 }

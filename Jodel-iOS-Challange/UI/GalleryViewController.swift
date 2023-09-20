@@ -29,7 +29,6 @@ final class GalleryViewController: UIViewController {
     super.viewWillAppear(animated)
     fetchData(for: currentPage)
   }
-
   // MARK: - Actions
 
   /// Loads more photos when the "Load More" button is pressed.
@@ -41,6 +40,7 @@ final class GalleryViewController: UIViewController {
 
   /// Sets up data bindings for view model properties.
   func setBindings() {
+    
     viewModel.errorMessage.bind { [weak self] error in
       if let errorMessage = error {
         self?.showAlert(title: "Error", message: errorMessage)
@@ -67,8 +67,6 @@ final class GalleryViewController: UIViewController {
       }
     }
   }
-
-
   // MARK: - UI and Data Handling
 
   /// Handles the "Pull to Refresh" action.
@@ -83,7 +81,7 @@ final class GalleryViewController: UIViewController {
   /// Fetches photos for a specific page.
   /// - Parameter page: The page number to fetch.
   func fetchData(for page: Int) {
-    viewModel.getPics(page: String(page)) {
+    viewModel.getPics(page: String(page)) {_ in
       DispatchQueue.main.async {
         self.updateUI()
       }

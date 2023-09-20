@@ -25,19 +25,14 @@ extension GalleryData.Photos {
   struct Photo: Codable {
     /// The ID of the photo.
     let id: String
-
     /// The secret key of the photo.
     let secret: String
-
     /// The server hosting the photo.
     let server: String
-
     /// The farm ID associated with the photo.
     let farm: Int
-
     /// The title of the photo.
     let title: String
-
     /// The URL of the photo.
     var photoURL: String {
       return "https://farm\(farm).staticflickr.com/\(server)/\(id)_\(secret).jpg"

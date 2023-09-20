@@ -5,13 +5,10 @@ import UIKit
 class GalleryCollectionViewCell: UICollectionViewCell {
   /// The label for displaying the title of the gallery item.
   @IBOutlet var title: UILabel!
-
   /// The slideshow view for displaying images.
   @IBOutlet var picture: ImageSlideshow!
-
   /// Weak reference to the parent view controller to prevent strong reference cycles.
   weak var parentViewController: UIViewController?
-
   /// The reuse identifier for this cell.
   static let reuseIdentifier: String = "GalleryCell"
 

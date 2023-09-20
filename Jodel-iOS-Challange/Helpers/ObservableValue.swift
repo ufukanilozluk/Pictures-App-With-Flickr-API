@@ -8,7 +8,6 @@ final class ObservableValue<T> {
       listener?(value)
     }
   }
-
   private var listener: ListenerType?
 
   /// Initializes an `ObservableValue` with an initial value.

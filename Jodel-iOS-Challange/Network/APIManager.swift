@@ -1,8 +1,6 @@
 import Foundation
 
-
 /// Represents a response that can be cached.
-
 class CachableResponse: Codable {
   /// The data of the response.
   let data: Data
@@ -29,13 +27,10 @@ class CachableResponse: Codable {
 class APIManager {
   /// Shared instance of `APIManager`.
   static let shared = APIManager()
-
   /// Private initializer to prevent external initialization.
   private init() {}
-
   /// Cache for storing responses.
   private let cache = NSCache<NSString, CachableResponse>()
-
   /// The time interval after which a cached response will expire (in seconds).
   private let cacheExpirationInterval: TimeInterval = 3600
 
@@ -46,7 +41,6 @@ class APIManager {
   ///   - dateDecodingStrategy: The date decoding strategy for JSON decoding. Defaults to `.deferredToDate`.
   ///   - keyDecodingStrategy: The key decoding strategy for JSON decoding. Defaults to `.useDefaultKeys`.
   ///   - completion: A closure to be executed once the request is complete.
-
   func getJSON<T: Decodable>(
     url: URL,
     dateDecodingStrategy: JSONDecoder.DateDecodingStrategy = .deferredToDate,
@@ -90,7 +84,6 @@ class APIManager {
     }
     .resume()
   }
-
 
   /// Decodes a response from JSON data.
   ///
@@ -140,7 +133,6 @@ extension APIManager {
 
 extension APIManager {
 /// Represents errors that can occur during API operations.
-
   enum APIError: Error {
     /// A network-related error with an associated message.
     case networkError(String)
@@ -152,7 +144,6 @@ extension APIManager {
     case noData
     /// An error indicating that decoding of the response failed with an associated message.
     case decodingFailed(String)
-
 
 /// A localized description of the error.
   var localizedDescription: String {
