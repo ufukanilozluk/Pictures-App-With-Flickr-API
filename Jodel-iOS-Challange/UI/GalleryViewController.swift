@@ -40,13 +40,6 @@ final class GalleryViewController: UIViewController {
 
   /// Sets up data bindings for view model properties.
   func setBindings() {
-    
-    viewModel.errorMessage.bind { [weak self] error in
-      if let errorMessage = error {
-        self?.showAlert(title: "Error", message: errorMessage)
-        return
-      }
-    }
     viewModel.photos.bind { [weak self] pics in
       guard let pics = pics else { return }
       self?.currentPhotoBatch = pics
@@ -81,9 +74,20 @@ final class GalleryViewController: UIViewController {
   /// Fetches photos for a specific page.
   /// - Parameter page: The page number to fetch.
   func fetchData(for page: Int) {
-    viewModel.getPics(page: String(page)) {_ in
-      DispatchQueue.main.async {
-        self.updateUI()
+//    viewModel.getPics(page: String(page)) { _ in
+//      DispatchQueue.main.async {
+//        self.updateUI()
+//      }
+//    }
+
+    viewModel.getPics(page: String(page)) { result in
+      switch result {
+      case .success:
+        DispatchQueue.main.async {
+          self.updateUI()
+        }
+      case let .failure(error):
+        self.showAlert(title: "Error", message: error.localizedDescription)
       }
     }
   }
