@@ -6,8 +6,8 @@ import UIKit
 final class GalleryViewController: UIViewController {
   // MARK: - Outlets
 
-  @IBOutlet var galleryCollectionView: UICollectionView!
-  @IBOutlet weak var loadButton: UIButton!
+  @IBOutlet private var galleryCollectionView: UICollectionView!
+  @IBOutlet private weak var loadMoreButton: UIButton!
 
   // MARK: - Properties
 
@@ -66,7 +66,7 @@ final class GalleryViewController: UIViewController {
   @objc private func didPullToRefresh() {
     photos = []
     currentPage = 1
-    loadButton.isHidden = false
+    loadMoreButton.isHidden = false
     fetchData(for: currentPage)
     addSkeleton()
   }
@@ -74,12 +74,6 @@ final class GalleryViewController: UIViewController {
   /// Fetches photos for a specific page.
   /// - Parameter page: The page number to fetch.
   func fetchData(for page: Int) {
-//    viewModel.getPics(page: String(page)) { _ in
-//      DispatchQueue.main.async {
-//        self.updateUI()
-//      }
-//    }
-
     viewModel.getPics(page: String(page)) { result in
       switch result {
       case .success:
@@ -118,7 +112,7 @@ final class GalleryViewController: UIViewController {
     refreshControl.endRefreshing()
     removeSkeleton()
     if currentPage == totalPages {
-      loadButton.isHidden = true
+      loadMoreButton.isHidden = true
     }
   }
 

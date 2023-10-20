@@ -4,8 +4,6 @@ import ImageSlideshow
 final class PhotosViewModel {
   /// Observable value holding the photos data.
   let photos: ObservableValue<GalleryData.Photos?> = ObservableValue(nil)
-  /// Observable value holding error messages.
-  let errorMessage: ObservableValue<String?> = ObservableValue(nil)
 
   /// Retrieves photos data from the API.
   ///
@@ -20,7 +18,6 @@ final class PhotosViewModel {
         self.photos.value = pics.photos
         closure(.success(()))
       case let .failure(error):
-        self.errorMessage.value = error.localizedDescription
         closure(.failure(error))
       }
     }
