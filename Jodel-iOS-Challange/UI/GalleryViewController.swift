@@ -11,35 +11,32 @@ final class GalleryViewController: UIViewController {
 
   // MARK: - Properties
 
-  var currentPage: Int = 1
-  var currentPhotoBatch: GalleryData.Photos?
-  var totalPages: Int?
-  var photos: [GalleryData.Photos.Photo] = []
-  lazy var refreshControl = UIRefreshControl()
-  let viewModel = PhotosViewModel()
+  private var currentPage: Int = 1
+  private var currentPhotoBatch: GalleryData.Photos?
+  private var totalPages: Int?
+  private var photos: [GalleryData.Photos.Photo] = []
+  private lazy var refreshControl = UIRefreshControl()
+  private let viewModel = PhotosViewModel()
 
   // MARK: - View Lifecycle
 
   override func viewDidLoad() {
     super.viewDidLoad()
     configUI()
-  }
-
-  override func viewWillAppear(_ animated: Bool) {
-    super.viewWillAppear(animated)
     fetchData(for: currentPage)
   }
+
   // MARK: - Actions
 
   /// Loads more photos when the "Load More" button is pressed.
-  @IBAction func btnLoadMore(_ sender: Any) {
+  @IBAction private func btnLoadMore(_ sender: Any) {
     loadMore()
   }
 
   // MARK: - Helper Methods
 
   /// Sets up data bindings for view model properties.
-  func setBindings() {
+  private func setBindings() {
     viewModel.photos.bind { [weak self] pics in
       guard let pics = pics else { return }
       self?.currentPhotoBatch = pics
@@ -73,7 +70,7 @@ final class GalleryViewController: UIViewController {
 
   /// Fetches photos for a specific page.
   /// - Parameter page: The page number to fetch.
-  func fetchData(for page: Int) {
+  private func fetchData(for page: Int) {
     viewModel.getPics(page: String(page)) { result in
       switch result {
       case .success:
@@ -82,12 +79,14 @@ final class GalleryViewController: UIViewController {
         }
       case let .failure(error):
         self.showAlert(title: "Error", message: error.localizedDescription)
+        self.loadMoreButton.isHidden = true
       }
     }
   }
 
+
   /// Configures the UI elements.
-  func configUI() {
+  private func configUI() {
     configureCollectionCellSize()
     galleryCollectionView.delegate = self
     galleryCollectionView.dataSource = self
@@ -98,7 +97,7 @@ final class GalleryViewController: UIViewController {
   }
 
   /// Configures the size of collection view cells based on the view width.
-  func configureCollectionCellSize() {
+  private func configureCollectionCellSize() {
     if let layout = galleryCollectionView.collectionViewLayout as? UICollectionViewFlowLayout {
       let width = view.frame.size.width
       layout.itemSize = CGSize(width: width, height: width)
@@ -106,7 +105,7 @@ final class GalleryViewController: UIViewController {
   }
 
   /// Updates the UI after data is fetched.
-  func updateUI() {
+  private func updateUI() {
     setBindings()
     galleryCollectionView.reloadData()
     refreshControl.endRefreshing()
@@ -117,12 +116,12 @@ final class GalleryViewController: UIViewController {
   }
 
   /// Adds a skeleton loading animation to the collection view.
-  func addSkeleton() {
+  private func addSkeleton() {
     galleryCollectionView.showAnimatedGradientSkeleton()
   }
 
   /// Removes the skeleton loading animation from the collection view.
-  func removeSkeleton() {
+  private func removeSkeleton() {
     galleryCollectionView.hideSkeleton()
   }
 }
