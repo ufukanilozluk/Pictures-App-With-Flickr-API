@@ -6,7 +6,7 @@ import UIKit
 final class GalleryViewController: UIViewController {
   // MARK: - Outlets
 
-  @IBOutlet private var galleryCollectionView: UICollectionView!
+  @IBOutlet private weak var galleryCollectionView: UICollectionView!
   @IBOutlet private weak var loadMoreButton: UIButton!
 
   // MARK: - Properties
@@ -15,15 +15,21 @@ final class GalleryViewController: UIViewController {
   private var currentPhotoBatch: GalleryData.Photos?
   private var totalPages: Int?
   private var photos: [GalleryData.Photos.Photo] = []
-  private lazy var refreshControl = UIRefreshControl()
   private let viewModel = PhotosViewModel()
+  private lazy var refreshControl : UIRefreshControl = {
+    let control = UIRefreshControl()
+    refreshControl.attributedTitle = NSAttributedString(string: "Updating")
+    refreshControl.addTarget(self, action: #selector(didPullToRefresh), for: .valueChanged)
+    return control
+  }()
+
 
   // MARK: - View Lifecycle
 
+
   override func viewDidLoad() {
     super.viewDidLoad()
-    configUI()
-    fetchData(for: currentPage)
+    setup()
   }
 
   // MARK: - Actions
@@ -34,6 +40,7 @@ final class GalleryViewController: UIViewController {
   }
 
   // MARK: - Helper Methods
+
 
   /// Sets up data bindings for view model properties.
   private func setBindings() {
@@ -65,7 +72,7 @@ final class GalleryViewController: UIViewController {
     currentPage = 1
     loadMoreButton.isHidden = false
     fetchData(for: currentPage)
-    addSkeleton()
+    galleryCollectionView.addSkeleton()
   }
 
   /// Fetches photos for a specific page.
@@ -90,10 +97,15 @@ final class GalleryViewController: UIViewController {
     configureCollectionCellSize()
     galleryCollectionView.delegate = self
     galleryCollectionView.dataSource = self
-    addSkeleton()
-    refreshControl.attributedTitle = NSAttributedString(string: "Updating")
-    refreshControl.addTarget(self, action: #selector(didPullToRefresh), for: .valueChanged)
+    galleryCollectionView.addSkeleton()
     galleryCollectionView.addSubview(refreshControl)
+  }
+
+
+  /// Initiliazes everything
+  private func setup() {
+    configUI()
+    fetchData(for: currentPage)
   }
 
   /// Configures the size of collection view cells based on the view width.
@@ -109,20 +121,10 @@ final class GalleryViewController: UIViewController {
     setBindings()
     galleryCollectionView.reloadData()
     refreshControl.endRefreshing()
-    removeSkeleton()
+    galleryCollectionView.removeSkeleton()
     if currentPage == totalPages {
       loadMoreButton.isHidden = true
     }
-  }
-
-  /// Adds a skeleton loading animation to the collection view.
-  private func addSkeleton() {
-    galleryCollectionView.showAnimatedGradientSkeleton()
-  }
-
-  /// Removes the skeleton loading animation from the collection view.
-  private func removeSkeleton() {
-    galleryCollectionView.hideSkeleton()
   }
 }
 

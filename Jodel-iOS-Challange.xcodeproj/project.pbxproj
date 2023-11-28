@@ -23,6 +23,7 @@
 		E1668E8929F7BF42001D9ED2 /* Test.json in Resources */ = {isa = PBXBuildFile; fileRef = E1668E8829F7BF42001D9ED2 /* Test.json */; };
 		E1668E8B29F7C537001D9ED2 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1668E8A29F7C537001D9ED2 /* UIViewController+Extension.swift */; };
 		E1A5BF2729F689600095B7A4 /* SkeletonView in Frameworks */ = {isa = PBXBuildFile; productRef = E1A5BF2629F689600095B7A4 /* SkeletonView */; };
+		E1E598D92B162FFC0004EC1D /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E598D82B162FFC0004EC1D /* UIView+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +65,7 @@
 		E1668E8829F7BF42001D9ED2 /* Test.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Test.json; sourceTree = "<group>"; };
 		E1668E8A29F7C537001D9ED2 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		E1C234186D0ED4F241AF5074 /* Pods_Jodel_iOS_Challange.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Jodel_iOS_Challange.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E1E598D82B162FFC0004EC1D /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -179,9 +181,18 @@
 			isa = PBXGroup;
 			children = (
 				E13F6F1829F5D62F0050050B /* ObservableValue.swift */,
-				E1668E8A29F7C537001D9ED2 /* UIViewController+Extension.swift */,
+				E1E598DA2B1630090004EC1D /* Extensions */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		E1E598DA2B1630090004EC1D /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				E1E598D82B162FFC0004EC1D /* UIView+Extension.swift */,
+				E1668E8A29F7C537001D9ED2 /* UIViewController+Extension.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -393,6 +404,7 @@
 				E13F6EE529F5944D0050050B /* GalleryViewController.swift in Sources */,
 				E13F6F1329F5A9D90050050B /* GalleryCollectionViewCell.swift in Sources */,
 				E13F6EE129F5944D0050050B /* AppDelegate.swift in Sources */,
+				E1E598D92B162FFC0004EC1D /* UIView+Extension.swift in Sources */,
 				E13F6F1629F5CAC20050050B /* PictureModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
