@@ -16,10 +16,10 @@ final class GalleryViewController: UIViewController {
   private var totalPages: Int?
   private var photos: [GalleryData.Photos.Photo] = []
   private let viewModel = PhotosViewModel()
-  private lazy var refreshControl : UIRefreshControl = {
+  private lazy var refreshControl: UIRefreshControl = {
     let control = UIRefreshControl()
-    refreshControl.attributedTitle = NSAttributedString(string: "Updating")
-    refreshControl.addTarget(self, action: #selector(didPullToRefresh), for: .valueChanged)
+    control.attributedTitle = NSAttributedString(string: "Updating")
+    control.addTarget(self, action: #selector(didPullToRefresh), for: .valueChanged)
     return control
   }()
 
