@@ -90,5 +90,4 @@ class GalleryCollectionViewCell: UICollectionViewCell {
   deinit {
     parentViewController = nil
   }
-
 }
