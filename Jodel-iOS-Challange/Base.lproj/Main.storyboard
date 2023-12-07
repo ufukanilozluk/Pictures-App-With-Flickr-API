@@ -22,7 +22,7 @@
                                 <rect key="frame" x="20" y="20" width="353" height="812"/>
                                 <subviews>
                                     <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="gGr-1V-wwY">
-                                        <rect key="frame" x="0.0" y="0.0" width="353" height="722.66666666666663"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="353" height="777.66666666666663"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="0.0" minimumInteritemSpacing="0.0" id="rsd-EZ-XII">
                                             <size key="itemSize" width="128" height="128"/>
@@ -90,14 +90,20 @@
                                         </userDefinedRuntimeAttributes>
                                     </collectionView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aLb-mN-zS1">
-                                        <rect key="frame" x="0.0" y="722.66666666666663" width="353" height="89.333333333333371"/>
+                                        <rect key="frame" x="0.0" y="777.66666666666663" width="353" height="34.333333333333371"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Load More"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="btnLoadMore:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DQN-A2-6Si"/>
                                         </connections>
                                     </button>
                                 </subviews>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                </userDefinedRuntimeAttributes>
                             </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -108,6 +114,9 @@
                             <constraint firstAttribute="trailing" secondItem="PjT-OP-axo" secondAttribute="trailing" constant="20" symbolic="YES" id="gyc-yL-jkb"/>
                             <constraint firstAttribute="bottom" secondItem="PjT-OP-axo" secondAttribute="bottom" constant="20" symbolic="YES" id="xrs-Yr-Xje"/>
                         </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                        </userDefinedRuntimeAttributes>
                     </view>
                     <connections>
                         <outlet property="galleryCollectionView" destination="gGr-1V-wwY" id="6PJ-19-C0H"/>

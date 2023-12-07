@@ -4,9 +4,9 @@ import UIKit
 /// Custom `UICollectionViewCell` for displaying a gallery item.
 class GalleryCollectionViewCell: UICollectionViewCell {
   /// The label for displaying the title of the gallery item.
-  @IBOutlet var titleLabel: UILabel!
+  @IBOutlet private weak var titleLabel: UILabel!
   /// The slideshow view for displaying images.
-  @IBOutlet var pictureView: ImageSlideshow!
+  @IBOutlet private weak var pictureView: ImageSlideshow!
   /// Weak reference to the parent view controller to prevent strong reference cycles.
   weak var parentViewController: UIViewController?
   /// The reuse identifier for this cell.
@@ -20,18 +20,8 @@ class GalleryCollectionViewCell: UICollectionViewCell {
   ///   - parentVC: The parent view controller.
   func set(data: GalleryData.Photos.Photo, indexPath: IndexPath, parentVC: UIViewController) {
     titleLabel.text = data.title
-    addPics(url: data.photoURL, on: pictureView)
-
+    setupSlideshow(with: data.photoURL, on: pictureView)
     parentViewController = parentVC
-  }
-
-  /// Adds pictures to the slideshow view from the provided URL.
-  ///
-  /// - Parameters:
-  ///   - url: The URL of the image.
-  ///   - view: The `ImageSlideshow` view.
-  private func addPics(url: String, on view: ImageSlideshow) {
-    setupSlideshow(with: url, on: view)
   }
 
   /// Setup the slideshow with the given URL.
@@ -73,7 +63,6 @@ class GalleryCollectionViewCell: UICollectionViewCell {
     noImageView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
   }
 
-
   /// Adds a tap gesture recognizer for full-screen viewing.
   private func addTapGesture() {
     let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(didTap))
@@ -84,10 +73,5 @@ class GalleryCollectionViewCell: UICollectionViewCell {
   @objc private func didTap() {
     guard let parentViewController = parentViewController else { return }
     pictureView.presentFullScreenController(from: parentViewController)
-  }
-
-  /// Deinitialize the object and release any resources.
-  deinit {
-    parentViewController = nil
   }
 }

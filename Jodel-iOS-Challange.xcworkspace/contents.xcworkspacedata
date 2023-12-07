@@ -2,7 +2,7 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:Jodel-iOS-Challange.xcodeproj">
+      location = "group:/Users/ufuk/Library/Mobile Documents/com~apple~CloudDocs/Code/IOS/IOSProjects/Jodel-iOS-Challange/Pictures-With-Flickr.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:Pods/Pods.xcodeproj">

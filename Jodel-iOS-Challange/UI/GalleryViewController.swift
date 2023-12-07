@@ -23,13 +23,16 @@ final class GalleryViewController: UIViewController {
     return control
   }()
 
-
   // MARK: - View Lifecycle
-
 
   override func viewDidLoad() {
     super.viewDidLoad()
     setup()
+  }
+
+  override func viewDidAppear(_ animated: Bool) {
+    super.viewDidAppear(animated)
+    view.addSkeleton()
   }
 
   // MARK: - Actions
@@ -40,7 +43,6 @@ final class GalleryViewController: UIViewController {
   }
 
   // MARK: - Helper Methods
-
 
   /// Sets up data bindings for view model properties.
   private func setBindings() {
@@ -64,6 +66,7 @@ final class GalleryViewController: UIViewController {
       }
     }
   }
+
   // MARK: - UI and Data Handling
 
   /// Handles the "Pull to Refresh" action.
@@ -72,7 +75,6 @@ final class GalleryViewController: UIViewController {
     currentPage = 1
     loadMoreButton.isHidden = false
     fetchData(for: currentPage)
-    galleryCollectionView.addSkeleton()
   }
 
   /// Fetches photos for a specific page.
@@ -91,16 +93,13 @@ final class GalleryViewController: UIViewController {
     }
   }
 
-
   /// Configures the UI elements.
   private func configUI() {
     configureCollectionCellSize()
     galleryCollectionView.delegate = self
     galleryCollectionView.dataSource = self
-    galleryCollectionView.addSkeleton()
     galleryCollectionView.addSubview(refreshControl)
   }
-
 
   /// Initiliazes everything
   private func setup() {
@@ -121,7 +120,7 @@ final class GalleryViewController: UIViewController {
     setBindings()
     galleryCollectionView.reloadData()
     refreshControl.endRefreshing()
-    galleryCollectionView.removeSkeleton()
+    view.removeSkeleton()
     if currentPage == totalPages {
       loadMoreButton.isHidden = true
     }
@@ -138,7 +137,7 @@ extension GalleryViewController: UICollectionViewDelegate, SkeletonCollectionVie
   }
 
   func collectionSkeletonView(_ skeletonView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    photos.count
+    2
   }
 
   // MARK: - UICollectionViewDelegate Methods

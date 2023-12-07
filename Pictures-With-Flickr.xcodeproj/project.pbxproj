@@ -280,7 +280,7 @@
 					};
 				};
 			};
-			buildConfigurationList = E13F6ED829F5944D0050050B /* Build configuration list for PBXProject "Jodel-iOS-Challange" */;
+			buildConfigurationList = E13F6ED829F5944D0050050B /* Build configuration list for PBXProject "Pictures-With-Flickr" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -716,7 +716,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		E13F6ED829F5944D0050050B /* Build configuration list for PBXProject "Jodel-iOS-Challange" */ = {
+		E13F6ED829F5944D0050050B /* Build configuration list for PBXProject "Pictures-With-Flickr" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				E13F6F0529F5944F0050050B /* Debug */,
