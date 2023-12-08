@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double Pods_Jodel_iOS_ChallangeVersionNumber;
-FOUNDATION_EXPORT const unsigned char Pods_Jodel_iOS_ChallangeVersionString[];
+FOUNDATION_EXPORT double Pods_Pictures_With_FlickrAPIVersionNumber;
+FOUNDATION_EXPORT const unsigned char Pods_Pictures_With_FlickrAPIVersionString[];
 

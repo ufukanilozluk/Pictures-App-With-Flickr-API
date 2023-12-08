@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "5C979F0799C77C2555A8AAD81DE73719"
-               BuildableName = "Pods_Jodel_iOS_Challange.framework"
-               BlueprintName = "Pods-Jodel-iOS-Challange"
+               BlueprintIdentifier = "D71DFDAB7D73681DF83F68FB0717F4FA"
+               BuildableName = "Pods_Pictures_With_FlickrAPI.framework"
+               BlueprintName = "Pods-Pictures-With-FlickrAPI"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>

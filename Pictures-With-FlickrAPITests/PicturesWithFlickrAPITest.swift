@@ -6,30 +6,24 @@
 //
 
 import XCTest
+@testable import Pictures_With_FlickrAPI
 
-final class PicturesWithFlickrAPITest: XCTestCase {
-
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+final class PicturesWithFlickrAPITests: XCTestCase {
+  func testJsonCanBeParsed() throws {
+    guard let pathString = Bundle(for: type(of: self)).path(forResource: "Test", ofType: "json") else {
+      fatalError("Json not found")
+    }
+    guard let json = try? String(contentsOfFile: pathString, encoding: .utf8) else {
+      fatalError("Unable to convert json to String")
+    }
+    guard let jsonData = json.data(using: .utf8) else {
+      fatalError("Encoding error")
+    }
+    guard let galleryData = try? JSONDecoder().decode(GalleryData.self, from: jsonData) else {
+      fatalError("Decoding error")
     }
 
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    XCTAssertEqual("Color", galleryData.photos.photo[0].title)
+    XCTAssertEqual("Owens River and Sea Grass", galleryData.photos.photo[1].title)
     }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
-    }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
-
 }

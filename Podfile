@@ -3,8 +3,8 @@
 
 
  
-target 'Jodel-iOS-Challange' do
-project 'Jodel-iOS-Challange.xcodeproj'
+target 'Pictures-With-FlickrAPI' do
+project 'Pictures-With-FlickrAPI.xcodeproj'
   
                      # Comment the next line if you don't want to use dynamic frameworks
     use_frameworks!

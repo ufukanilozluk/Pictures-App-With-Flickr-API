@@ -6,16 +6,24 @@ import UIKit
 final class GalleryViewController: UIViewController {
   // MARK: - Outlets
 
+  /// Collection view displaying the gallery of photos.
   @IBOutlet private weak var galleryCollectionView: UICollectionView!
+  /// Button used to load more photos.
   @IBOutlet private weak var loadMoreButton: UIButton!
-
   // MARK: - Properties
-
+  /// Current page number for photo retrieval.
   private var currentPage: Int = 1
+  /// Data structure representing the current batch of photos.
   private var currentPhotoBatch: GalleryData.Photos?
+  /// Total number of pages available for photo retrieval.
   private var totalPages: Int?
+  /// Array containing the fetched photos.
   private var photos: [GalleryData.Photos.Photo] = []
+  /// View model responsible for managing photo-related data.
   private let viewModel = PhotosViewModel()
+  /// Flag to ensure skeleton animation is displayed only once.
+  private var skeletonJustOnce = true
+  /// Refresh control for the pull-to-refresh feature.
   private lazy var refreshControl: UIRefreshControl = {
     let control = UIRefreshControl()
     control.attributedTitle = NSAttributedString(string: "Updating")
@@ -32,7 +40,10 @@ final class GalleryViewController: UIViewController {
 
   override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
-    view.addSkeleton()
+    if skeletonJustOnce {
+      view.addSkeleton()
+      skeletonJustOnce = false
+    }
   }
 
   // MARK: - Actions
@@ -130,8 +141,9 @@ final class GalleryViewController: UIViewController {
 // MARK: - UICollectionViewDelegate and SkeletonCollectionViewDataSource
 
 extension GalleryViewController: UICollectionViewDelegate, SkeletonCollectionViewDataSource {
-  // MARK: - SkeletonCollectionViewDataSource Methods
+  // MARK: - SkeletonView Methods
 
+  // These two methods are for skeletonview to work on UICollectionView
   func collectionSkeletonView(_ skeletonView: UICollectionView, cellIdentifierForItemAt indexPath: IndexPath) -> ReusableCellIdentifier {
     GalleryCollectionViewCell.reuseIdentifier
   }

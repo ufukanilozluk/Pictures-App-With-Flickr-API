@@ -3,14 +3,21 @@ import UIKit
 
 /// Custom `UICollectionViewCell` for displaying a gallery item.
 class GalleryCollectionViewCell: UICollectionViewCell {
-  /// The label for displaying the title of the gallery item.
-  @IBOutlet private weak var titleLabel: UILabel!
-  /// The slideshow view for displaying images.
-  @IBOutlet private weak var pictureView: ImageSlideshow!
+  // MARK: - Properties
+
   /// Weak reference to the parent view controller to prevent strong reference cycles.
   weak var parentViewController: UIViewController?
   /// The reuse identifier for this cell.
   static let reuseIdentifier: String = "GalleryCell"
+
+  // MARK: - Outlets
+
+  /// The label for displaying the title of the gallery item.
+  @IBOutlet private weak var titleLabel: UILabel!
+  /// The slideshow view for displaying images.
+  @IBOutlet private weak var pictureView: ImageSlideshow!
+
+  // MARK: - Helper Methods
 
   /// Sets the data for the cell.
   ///
