@@ -91,15 +91,15 @@ final class GalleryViewController: UIViewController {
   /// Fetches photos for a specific page.
   /// - Parameter page: The page number to fetch.
   private func fetchData(for page: Int) {
-    viewModel.getPics(page: String(page)) { result in
+    viewModel.getPics(page: String(page)) {[weak self] result in
       switch result {
       case .success:
         DispatchQueue.main.async {
-          self.updateUI()
+          self?.updateUI()
         }
       case let .failure(error):
-        self.showAlert(title: "Error", message: error.localizedDescription)
-        self.loadMoreButton.isHidden = true
+        self?.showAlert(title: "Error", message: error.localizedDescription)
+        self?.loadMoreButton.isHidden = true
       }
     }
   }
@@ -116,6 +116,7 @@ final class GalleryViewController: UIViewController {
   private func setup() {
     configUI()
     fetchData(for: currentPage)
+    setBindings()
   }
 
   /// Configures the size of collection view cells based on the view width.
@@ -128,7 +129,6 @@ final class GalleryViewController: UIViewController {
 
   /// Updates the UI after data is fetched.
   private func updateUI() {
-    setBindings()
     galleryCollectionView.reloadData()
     refreshControl.endRefreshing()
     view.removeSkeleton()
@@ -149,7 +149,7 @@ extension GalleryViewController: UICollectionViewDelegate, SkeletonCollectionVie
   }
 
   func collectionSkeletonView(_ skeletonView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-    2
+    photos.count
   }
 
   // MARK: - UICollectionViewDelegate Methods
