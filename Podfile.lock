@@ -8,22 +8,26 @@ PODS:
     - AlamofireImage (~> 3.0)
     - ImageSlideshow/Core
   - ImageSlideshow/Core (1.8.3)
+  - SkeletonView (1.30.4)
 
 DEPENDENCIES:
   - ImageSlideshow (~> 1.8.3)
   - ImageSlideshow/Alamofire
+  - SkeletonView
 
 SPEC REPOS:
   trunk:
     - Alamofire
     - AlamofireImage
     - ImageSlideshow
+    - SkeletonView
 
 SPEC CHECKSUMS:
   Alamofire: 85e8a02c69d6020a0d734f6054870d7ecb75cf18
   AlamofireImage: be9963c6582d68b39e89191f64c82a7d7bf40fdd
   ImageSlideshow: 4694d7d699a1549582e7cc631fb392d8f91630f3
+  SkeletonView: 5a050f6411e697abd4cda0a8d767013399dccd69
 
-PODFILE CHECKSUM: 6f00bc31eaab4782d57830faf3a1f83cba730a26
+PODFILE CHECKSUM: 7547e9afb6d1efcd51613b2c7be08694e132127e
 
 COCOAPODS: 1.11.3

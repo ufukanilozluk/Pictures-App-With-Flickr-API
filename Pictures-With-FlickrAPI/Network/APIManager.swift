@@ -23,6 +23,8 @@ class CachableResponse: Codable {
 
 
 /// A manager for handling API requests and caching responses.
+///
+/// 
 class APIManager {
   // MARK: - Singleton Instance
 

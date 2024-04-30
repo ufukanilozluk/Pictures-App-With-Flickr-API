@@ -50,7 +50,7 @@ extension Endpoint {
   /// - Returns: An Endpoint instance representing the constructed gallery URL.
   static func gallery(
     method: String = "flickr.galleries.getPhotos",
-    apiKey: String = "92111faaf0ac50706da05a1df2e85d82",
+    apiKey: String = "YOUR API KEY",
     galleryId: String = "66911286-72157647277042064",
     format: String = "json",
     perPage: String = "3",

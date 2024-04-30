@@ -11,8 +11,8 @@ project 'Pictures-With-FlickrAPI.xcodeproj'
 
     pod "ImageSlideshow/Alamofire"
     pod 'ImageSlideshow', '~> 1.8.3'
+    pod 'SkeletonView'
 
-  # Pods for IosCase
 
   # ignore all warnings from all pods
     inhibit_all_warnings!

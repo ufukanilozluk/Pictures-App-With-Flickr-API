@@ -20,7 +20,6 @@
 		E13F6F1C29F5D6300050050B /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13F6F1929F5D62F0050050B /* EndPoint.swift */; };
 		E13F6F1E29F5D72D0050050B /* PhotosViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13F6F1D29F5D72D0050050B /* PhotosViewModel.swift */; };
 		E1668E8B29F7C537001D9ED2 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1668E8A29F7C537001D9ED2 /* UIViewController+Extension.swift */; };
-		E1A5BF2729F689600095B7A4 /* SkeletonView in Frameworks */ = {isa = PBXBuildFile; productRef = E1A5BF2629F689600095B7A4 /* SkeletonView */; };
 		E1D5865B2B23632500262431 /* PicturesWithFlickrAPITest.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1D5865A2B23632500262431 /* PicturesWithFlickrAPITest.swift */; };
 		E1D5865D2B23648400262431 /* Test.json in Resources */ = {isa = PBXBuildFile; fileRef = E1D5865C2B23648400262431 /* Test.json */; };
 		E1E598D92B162FFC0004EC1D /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E598D82B162FFC0004EC1D /* UIView+Extension.swift */; };
@@ -65,7 +64,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E1A5BF2729F689600095B7A4 /* SkeletonView in Frameworks */,
 				A1DF6B9E1FEE2B01355E78A2 /* Pods_Pictures_With_FlickrAPI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -199,7 +197,6 @@
 			);
 			name = "Pictures-With-FlickrAPI";
 			packageProductDependencies = (
-				E1A5BF2629F689600095B7A4 /* SkeletonView */,
 			);
 			productName = "Jodel-iOS-Challange";
 			productReference = E13F6EDD29F5944D0050050B /* Pictures-With-FlickrAPI.app */;
@@ -252,7 +249,6 @@
 			);
 			mainGroup = E13F6ED429F5944D0050050B;
 			packageReferences = (
-				E1A5BF2529F689600095B7A4 /* XCRemoteSwiftPackageReference "SkeletonView" */,
 			);
 			productRefGroup = E13F6EDE29F5944D0050050B /* Products */;
 			projectDirPath = "";
@@ -453,7 +449,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -510,7 +506,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -547,9 +543,13 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "Ufuk.Pictures-With-FlickrAPI";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -579,9 +579,13 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "Ufuk.Pictures-With-FlickrAPI";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -659,25 +663,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		E1A5BF2529F689600095B7A4 /* XCRemoteSwiftPackageReference "SkeletonView" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Juanpe/SkeletonView.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.0.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		E1A5BF2629F689600095B7A4 /* SkeletonView */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = E1A5BF2529F689600095B7A4 /* XCRemoteSwiftPackageReference "SkeletonView" */;
-			productName = SkeletonView;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = E13F6ED529F5944D0050050B /* Project object */;
 }
