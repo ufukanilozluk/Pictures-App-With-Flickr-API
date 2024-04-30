@@ -7,4 +7,6 @@ You are going to need your own Api Key from Flickr.
 
 Here how it works.
 
+![](https://github.com/ufukanilozluk/Pictures-App-With-Flickr-API/blob/main/Pictures%20With%20Flickr%20Api.gif)
+
 
