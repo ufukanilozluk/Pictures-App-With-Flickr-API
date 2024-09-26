@@ -6,7 +6,7 @@
 
   
 
-![](https://github.com/ufukanilozluk/Pictures-App-With-Flickr-API/blob/main/Pictures%20With%20Flickr%20Api.gif)
+![Portfolio Gif](https://github.com/ufukanilozluk/Pictures-App-With-Flickr-API/blob/main/Pictures%20With%20Flickr%20Api.gif)
 
 ### **TechStack**
 
