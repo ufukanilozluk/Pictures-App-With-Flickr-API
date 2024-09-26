@@ -4,8 +4,8 @@
   
 - You are going to need your own API key from Flickr.
 
+### **Please wait for gif to load!**
   
-
 ![Portfolio Gif](https://github.com/ufukanilozluk/Pictures-App-With-Flickr-API/blob/main/Pictures%20With%20Flickr%20Api.gif)
 
 ### **TechStack**
