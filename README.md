@@ -6,7 +6,7 @@
 
   
 
-![Portfolio Gif](https://drive.google.com/file/d/1XkbAm3mTfaHPPaM5ebRxVjiNargzEpgU/view)
+![Portfolio Gif](https://github.com/ufukanilozluk/Pictures-App-With-Flickr-API/Pictures With Flickr Api.gif)
 
 ### **TechStack**
 
